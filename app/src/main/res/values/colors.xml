@@ -9,9 +9,11 @@
     <color name="colorAccent">#9b9b9b</color>
 
     <color name="white">#ffffff</color>
+    <color name="bottom_bgcolor">#fdfdfd</color>
+    <color name="background">#f4f4f4</color>
+
     <color name="dark_black">#1f1f1f</color>
     <color name="light_gray">#9b9b9b</color>
-    <color name="background">#f4f4f4</color>
 
     <color name="blue_primary">#1f96f2</color>
     <color name="blue_light">#9bdcff</color>

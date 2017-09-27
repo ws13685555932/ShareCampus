@@ -24,14 +24,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"></FrameLayout>
 
-            <android.support.design.widget.BottomNavigationView
-                android:id="@+id/bottom_nav"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                app:menu="@menu/activity_main_bottom">
+                android:orientation="vertical">
 
-            </android.support.design.widget.BottomNavigationView>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="@drawable/gradient"></View>
+
+                <android.support.design.widget.BottomNavigationView
+                    android:id="@+id/bottom_nav"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/bottom_bgcolor"
+                    android:layout_gravity="bottom"
+                    app:menu="@menu/activity_main_bottom">
+
+                </android.support.design.widget.BottomNavigationView>
+
+
+            </LinearLayout>
+
+
 
         </android.support.design.widget.CoordinatorLayout>
     </LinearLayout>
