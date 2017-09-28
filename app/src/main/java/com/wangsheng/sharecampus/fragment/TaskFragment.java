@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,9 +49,9 @@ public class TaskFragment extends Fragment {
         unbinder = ButterKnife.bind(this, view);
 
         List<Fragment> fragList = new ArrayList<>();
-        CategoryFragment cate1 = new CategoryFragment();
-        CategoryFragment cate2 = new CategoryFragment();
-        CategoryFragment cate3 = new CategoryFragment();
+        AlltaskFragment cate1 = new AlltaskFragment();
+        AlltaskFragment cate2 = new AlltaskFragment();
+        AlltaskFragment cate3 = new AlltaskFragment();
 
         fragList.add(cate1);
         fragList.add(cate2);

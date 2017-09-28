@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <View
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#e0e0e0"/>
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/task_user_icon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginRight="3dp"
+            android:src="@drawable/kangna"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="1dp" />
+        <TextView
+            android:id="@+id/task_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="康纳"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/task_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="谁能帮我买个西红柿啊"
+            android:textSize="20dp"/>
+    </LinearLayout>
+</LinearLayout>
