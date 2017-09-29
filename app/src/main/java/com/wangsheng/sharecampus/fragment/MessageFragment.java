@@ -12,6 +12,8 @@ import com.wangsheng.sharecampus.R;
 /**
  * Created by wangsheng
  * on 2017/9/27.
+ *
+ * 首页消息界面
  */
 
 public class MessageFragment extends Fragment {

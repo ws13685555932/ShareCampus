@@ -24,6 +24,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 /**
  * Created by wangsheng
  * on 2017/9/27.
+ *
+ * 首页任务界面
  */
 
 public class TaskFragment extends Fragment {
@@ -49,9 +51,9 @@ public class TaskFragment extends Fragment {
         unbinder = ButterKnife.bind(this, view);
 
         List<Fragment> fragList = new ArrayList<>();
-        AlltaskFragment cate1 = new AlltaskFragment();
-        AlltaskFragment cate2 = new AlltaskFragment();
-        AlltaskFragment cate3 = new AlltaskFragment();
+        CategoryFragment cate1 = new CategoryFragment();
+        CategoryFragment cate2 = new CategoryFragment();
+        CategoryFragment cate3 = new CategoryFragment();
 
         fragList.add(cate1);
         fragList.add(cate2);
