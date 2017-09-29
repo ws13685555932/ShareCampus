@@ -3,6 +3,8 @@ package com.wangsheng.sharecampus.adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.view.View;
+import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,4 +32,10 @@ public class CategoryPageAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return fragList.size();
     }
+
+    @Override
+    public void destroyItem(ViewGroup container, int position, Object object) {
+
+    }
+
 }

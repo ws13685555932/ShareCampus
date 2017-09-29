@@ -1,4 +1,4 @@
-package com.wangsheng.sharecampus;
+package com.wangsheng.sharecampus.activity;
 
 import android.graphics.Color;
 import android.os.Build;
@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.wangsheng.sharecampus.R;
 import com.wangsheng.sharecampus.fragment.MessageFragment;
 import com.wangsheng.sharecampus.fragment.TaskFragment;
 
@@ -60,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
 
         taskFragment = new TaskFragment();
         messageFragment = new MessageFragment();
-        FragmentManager manager = getSupportFragmentManager();
         
         addFragment(R.id.content_layout,taskFragment);
         addFragment(R.id.content_layout, messageFragment);
