@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,7 +38,7 @@ public class CategoryFragment extends LazyFragment {
     RecyclerView recyclerView;
     Unbinder unbinder;
     List<Task> list = new ArrayList<Task>();
-    private LinearLayoutManager mLayoutManager;
+    private StaggeredGridLayoutManager mLayoutManager;
 
 
     public CategoryFragment() {
@@ -46,7 +47,7 @@ public class CategoryFragment extends LazyFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_alltask,container,false);
+        View view = inflater.inflate(R.layout.fragment_catetory,container,false);
         unbinder = ButterKnife.bind(this,view);
 
         return view;
@@ -70,7 +71,8 @@ public class CategoryFragment extends LazyFragment {
         Task task3 = new Task();
         task3.setTaskTitle("第3个任务");
         list.add(task3);
-        mLayoutManager=new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false);//设置为一个1列的纵向网格布局
+
+        mLayoutManager = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(mLayoutManager);
         TaskRecycleAdapter taskRecycleAdapter = new TaskRecycleAdapter(getActivity(),list);
         recyclerView.setAdapter(taskRecycleAdapter);

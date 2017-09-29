@@ -25,7 +25,7 @@ public class TaskRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     }
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.taskitem, parent,
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_recy_task, parent,
                 false);
         MyViewHolder holder = new MyViewHolder(view);
 
@@ -39,7 +39,6 @@ public class TaskRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        ((MyViewHolder) holder).title.setText(mData.get(position).getTaskTitle());
     }
 
     @Override
@@ -63,7 +62,6 @@ public class TaskRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         public MyViewHolder(View view)
         {
             super(view);
-            title = (TextView)view.findViewById(R.id.task_title);
         }
     }
 

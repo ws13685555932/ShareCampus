@@ -5,6 +5,11 @@ package com.wangsheng.sharecampus.bean;
  */
 
 public class Task {
+    //引用时直接使用taskType == Task.TYPE_FIND_PERSON
+    public static final int TPYE_FIND_PERSON = 1;
+    public static final int TPYE_HELP = 2;
+    public static final int TPYE_OTHER = 3;
+
     String createrIconUrl;
     String createrName;
     String createTime;

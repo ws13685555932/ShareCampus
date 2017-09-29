@@ -18,7 +18,7 @@
     <!--任务标题颜色-->
     <color name="dark_black">#1f1f1f</color>
     <!--底边栏未选中图标颜色-->
-    <color name="drak_gray">#9b9b9b</color>
+    <color name="dark_gray">#9b9b9b</color>
     <!--搜索栏背景颜色-->
     <color name="light_gray">#eeeeee</color>
 
