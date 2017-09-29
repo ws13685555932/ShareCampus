@@ -37,7 +37,7 @@
                 android:layout_centerVertical="true"
                 android:text="云小逸"
                 android:textColor="@color/dark_gray"
-                android:textSize="14sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:layout_width="wrap_content"

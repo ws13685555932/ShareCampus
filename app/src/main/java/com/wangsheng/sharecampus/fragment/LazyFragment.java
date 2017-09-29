@@ -8,6 +8,12 @@ import android.view.View;
 /**
  * Created by wangsheng
  * on 2017/9/29.
+ *
+ * 懒加载
+ * viewpager正常会缓存左右两个页面以便滑动时能流畅显示，因为首页任务每个分类下的任务界面都要进行网络请求，
+ * 写成懒加载可以避免每次滑动旁边两个页面的网络请求，滑到哪个页面就进行那个页面的请求。
+ *
+ * from:http://www.cnblogs.com/dasusu/p/5926731.html
  */
 
 public class LazyFragment extends Fragment {
@@ -17,11 +23,14 @@ public class LazyFragment extends Fragment {
     private View rootView;
 
 
-    //setUserVisibleHint()在Fragment创建时会先被调用一次，传入isVisibleToUser = false
-    //如果当前Fragment可见，那么setUserVisibleHint()会再次被调用一次，传入isVisibleToUser = true
-    //如果Fragment从可见->不可见，那么setUserVisibleHint()也会被调用，传入isVisibleToUser = false
-    //总结：setUserVisibleHint()除了Fragment的可见状态发生变化时会被回调外，在new Fragment()时也会被回调
-    //如果我们需要在 Fragment 可见与不可见时干点事，用这个的话就会有多余的回调了，那么就需要重新封装一个
+    /**
+     * setUserVisibleHint()在Fragment创建时会先被调用一次，传入isVisibleToUser = false
+     * 如果当前Fragment可见，那么setUserVisibleHint()会再次被调用一次，传入isVisibleToUser = true
+     * 如果Fragment从可见->不可见，那么setUserVisibleHint()也会被调用，传入isVisibleToUser = false
+     * 总结：setUserVisibleHint()除了Fragment的可见状态发生变化时会被回调外，在new Fragment()时也会被回调
+     * 如果我们需要在 Fragment 可见与不可见时干点事，用这个的话就会有多余的回调了，那么就需要重新封装一个
+     *
+     * */
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
