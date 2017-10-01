@@ -1,4 +1,4 @@
-package com.wangsheng.sharecampus.bean;
+package com.wangsheng.sharecampus.Bean;
 
 /**
  * Created by wangsheng

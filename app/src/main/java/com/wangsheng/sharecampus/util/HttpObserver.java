@@ -3,7 +3,7 @@ package com.wangsheng.sharecampus.util;
 
 import android.util.Log;
 
-import com.wangsheng.sharecampus.bean.ResponseInfo;
+import com.wangsheng.sharecampus.Bean.ResponseInfo;
 
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
