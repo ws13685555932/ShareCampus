@@ -21,7 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.TaskActivity">
-
+        </activity>
+        <activity android:name=".activity.MyWalletActivity">
         </activity>
 
     </application>
