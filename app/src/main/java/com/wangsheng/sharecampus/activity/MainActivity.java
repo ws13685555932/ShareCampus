@@ -120,8 +120,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected( MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_slideshow:
-                Intent intent = new Intent(MainActivity.this, MyWalletActivity.class);
-                startActivity(intent);
+                Intent wallet = new Intent(MainActivity.this, MyWalletActivity.class);
+                startActivity(wallet);
+                break;
+            case R.id.nav_send:
+                Intent collection = new Intent(MainActivity.this, MyCollectionActivity.class);
+                startActivity(collection);
                 break;
         }
 

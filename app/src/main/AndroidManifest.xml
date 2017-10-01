@@ -24,6 +24,7 @@
         </activity>
         <activity android:name=".activity.MyWalletActivity">
         </activity>
+        <activity android:name=".activity.MyCollectionActivity"/>
 
     </application>
 

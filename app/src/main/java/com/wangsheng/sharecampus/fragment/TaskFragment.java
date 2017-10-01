@@ -58,7 +58,6 @@ public class TaskFragment extends Fragment {
         fragList.add(cate1);
         fragList.add(cate2);
         fragList.add(cate3);
-
         viewPager.setAdapter(new CategoryPageAdapter(getFragmentManager(),fragList));
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.getTabAt(0).setText("全部");
