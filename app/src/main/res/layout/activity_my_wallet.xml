@@ -24,6 +24,13 @@
                 android:layout_marginRight="16dp"
                 android:layout_gravity="left"
                 android:src="@drawable/ic_back"/>
+            <ImageView
+                android:id="@+id/iv_recharge"
+                android:layout_width="25dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="16dp"
+                android:layout_gravity="right"
+                android:src="@drawable/ic_recharge"/>
 
             <TextView
                 android:layout_marginRight="16dp"

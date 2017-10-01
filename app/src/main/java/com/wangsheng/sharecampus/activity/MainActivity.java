@@ -1,19 +1,21 @@
 package com.wangsheng.sharecampus.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.wangsheng.sharecampus.R;
 import com.wangsheng.sharecampus.fragment.MessageFragment;
@@ -22,12 +24,14 @@ import com.wangsheng.sharecampus.fragment.TaskFragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     @BindView(R.id.drawer)
     DrawerLayout drawer;
     @BindView(R.id.bottom_nav)
     BottomNavigationView bottomNav;
+    @BindView(R.id.nav_view) NavigationView navigationView;
+
 
     Fragment taskFragment;
     Fragment messageFragment;
@@ -43,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        navigationView.setNavigationItemSelectedListener(this);
 
         drawer.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
             @Override
@@ -105,6 +110,21 @@ public class MainActivity extends AppCompatActivity {
         transaction.add(layout,fragment);
         transaction.commit();
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_main_drawer, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onNavigationItemSelected( MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.nav_slideshow:
+                Intent intent = new Intent(MainActivity.this, MyWalletActivity.class);
+                startActivity(intent);
+                break;
+        }
 
+        return false;
+    }
 }
