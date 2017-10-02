@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.wangsheng.sharecampus.Bean.Business;
+import com.wangsheng.sharecampus.bean.Business;
 import com.wangsheng.sharecampus.R;
 
 import java.util.List;

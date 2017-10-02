@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:background="@color/background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -23,14 +24,13 @@
                 android:layout_height="30dp"
                 android:layout_marginRight="16dp"
                 android:layout_gravity="left"
-                android:src="@drawable/ic_back"/>
+                android:src="@drawable/ic_toolbar_back"/>
             <ImageView
                 android:id="@+id/iv_recharge"
                 android:layout_width="25dp"
                 android:layout_height="30dp"
                 android:layout_marginRight="16dp"
-                android:layout_gravity="right"
-                android:src="@drawable/ic_recharge"/>
+                android:layout_gravity="right"/>
 
             <TextView
                 android:layout_marginRight="16dp"
@@ -45,14 +45,24 @@
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/gradient_reverse"
+        ></View>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:background="@color/background"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:background="@color/white"
+        android:layout_marginBottom="10dp"
+        android:paddingBottom="10dp"
         android:orientation="horizontal">
         <LinearLayout
             android:layout_width="0dp"
@@ -75,13 +85,13 @@
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/ic_restmoney"/>
+                    android:layout_marginLeft="10dp"/>
                 <TextView
                     android:id="@+id/iv_restmoney"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="13dp"
+                    android:textColor="@color/blue_primary"
                     android:textSize="30dp"
                     android:text="44.6"/>
             </LinearLayout>
@@ -107,26 +117,23 @@
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/ic_credit"/>
+                    android:layout_marginLeft="10dp"/>
                 <TextView
                     android:id="@+id/iv_credit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="13dp"
                     android:textSize="30dp"
+                    android:textColor="@color/blue_primary"
                     android:text="666"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:background="@color/background"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"
         android:orientation="vertical">
 
         <RelativeLayout

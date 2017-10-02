@@ -22,14 +22,13 @@
                 android:layout_height="30dp"
                 android:layout_marginRight="16dp"
                 android:layout_gravity="left"
-                android:src="@drawable/ic_back"/>
+                android:src="@drawable/ic_toolbar_back"/>
             <ImageView
                 android:id="@+id/iv_add"
                 android:layout_width="25dp"
                 android:layout_height="30dp"
                 android:layout_marginRight="16dp"
-                android:layout_gravity="right"
-                android:src="@drawable/ic_add"/>
+                android:layout_gravity="right"/>
 
             <TextView
                 android:layout_marginRight="16dp"

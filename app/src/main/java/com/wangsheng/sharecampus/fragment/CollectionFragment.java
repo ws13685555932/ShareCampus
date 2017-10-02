@@ -9,8 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.wangsheng.sharecampus.Bean.Person;
-import com.wangsheng.sharecampus.Bean.Task;
+import com.wangsheng.sharecampus.bean.Person;
+import com.wangsheng.sharecampus.bean.Task;
 import com.wangsheng.sharecampus.R;
 import com.wangsheng.sharecampus.adapter.CollectionPageAdapter;
 
@@ -35,6 +35,7 @@ public class CollectionFragment extends LazyFragment {
     public CollectionFragment(int type){
         this.type = type;
     }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

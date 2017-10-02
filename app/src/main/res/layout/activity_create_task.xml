@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.wangsheng.sharecampus.activity.CreateTaskActivity">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_scrollFlags="scroll|enterAlways|snap">
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_toolbar_back" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="创建任务"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:background="@color/background"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="标题"
+                android:textColor="@color/dark_gray"
+                android:textSize="16sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@drawable/bg_edittext"
+                android:hint="任务标题（不超过20字）"
+                android:maxLines="1"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="标签"
+                android:textColor="@color/dark_gray"
+                android:textSize="16sp" />
+
+            <com.zhy.view.flowlayout.TagFlowLayout
+                android:id="@+id/tfl_labels"
+                app:max_select="-1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </com.zhy.view.flowlayout.TagFlowLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="选项（点击图标设置）"
+                android:textColor="@color/dark_gray"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.wangsheng.sharecampus.IconTextView
+                    android:drawableLeft="@drawable/task_price"
+                    app:iconHeight="20dp"
+                    app:iconWidth="20dp"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:drawablePadding="4dp"
+                    android:text="2.00"
+                    android:gravity="center_vertical"/>
+
+                <com.wangsheng.sharecampus.IconTextView
+                    android:drawableLeft="@drawable/task_time_left"
+                    app:iconHeight="20dp"
+                    app:iconWidth="20dp"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:drawablePadding="4dp"
+                    android:text="5天"
+                    android:gravity="center_vertical"/>
+
+                <com.wangsheng.sharecampus.IconTextView
+                    android:drawableLeft="@drawable/task_person_limit"
+                    app:iconHeight="20dp"
+                    app:iconWidth="20dp"
+                    android:layout_width="80dp"
+                    android:drawablePadding="4dp"
+                    android:layout_height="30dp"
+                    android:text="3人"
+                    android:gravity="center_vertical"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="详细描述"
+                android:textColor="@color/dark_gray"
+                android:textSize="16sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:background="@drawable/bg_edittext"
+                android:gravity="start"
+                android:hint="详细描述"
+                android:maxLines="1"
+                android:padding="5dp"
+                android:textColor="@color/dark_black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <Button
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:background="@drawable/selector_button_confirm"
+            android:textColor="@color/white"
+            android:text="发布任务"/>
+    </LinearLayout>
+
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_below="@id/toolbar"
+        android:background="@drawable/gradient_reverse" />
+
+
+</RelativeLayout>

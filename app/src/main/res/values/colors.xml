@@ -24,9 +24,16 @@
 
     <!--蓝色主题色-->
     <color name="blue_primary">#1f96f2</color>
-    <!--蓝色主题配套浅色，tablayout未选中tab'颜色-->
+    <color name="dark_blue">#3e8ded</color>
+    <!--蓝色主题配套浅色，tabLayout未选中tab颜色-->
     <color name="blue_light">#9bdcff</color>
     <!--一个小竖线的颜色-->
     <color name="gray_line">#737373</color>
+
+    <color name="blue_green">#44d8a6</color>
+    <color name="yellow">#fdc65f</color>
+    <color name="dark_pink">#ff5c77</color>
+
+    <color name="message_unread">#f74d2f</color>
 
 </resources>
