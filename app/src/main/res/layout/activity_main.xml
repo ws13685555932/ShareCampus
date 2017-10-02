@@ -18,7 +18,14 @@
             android:layout_height="match_parent"
             android:fitsSystemWindows="true">
 
+            <FrameLayout
+                android:id="@+id/content_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="56dp"/>
+
             <LinearLayout
+                android:id="@+id/ll_bottom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
@@ -34,7 +41,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/bottom_bgcolor"
-                    android:layout_gravity="bottom"
                     app:menu="@menu/activity_main_bottom">
 
                 </android.support.design.widget.BottomNavigationView>
@@ -42,11 +48,7 @@
 
             </LinearLayout>
 
-            <FrameLayout
-                android:id="@+id/content_layout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="56dp"/>
+
 
 
         </android.support.design.widget.CoordinatorLayout>

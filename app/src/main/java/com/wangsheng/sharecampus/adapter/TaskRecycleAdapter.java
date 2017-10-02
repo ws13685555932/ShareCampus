@@ -1,12 +1,14 @@
 package com.wangsheng.sharecampus.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.wangsheng.sharecampus.activity.TaskActivity;
 import com.wangsheng.sharecampus.bean.Task;
 import com.wangsheng.sharecampus.R;
 
@@ -52,6 +54,13 @@ public class TaskRecycleAdapter extends RecyclerView.Adapter<TaskRecycleAdapter.
                 false);
         MyViewHolder holder = new MyViewHolder(view);
 
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, TaskActivity.class);
+                mContext.startActivity(intent);
+            }
+        });
 //        //给布局设置点击和长点击监听
 //        view.setOnClickListener(this);
 //        view.setOnLongClickListener(this);

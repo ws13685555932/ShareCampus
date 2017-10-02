@@ -1,4 +1,4 @@
-package com.wangsheng.sharecampus;
+package com.wangsheng.sharecampus.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -8,6 +8,7 @@ import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.util.Log;
 
+import com.wangsheng.sharecampus.R;
 import com.wangsheng.sharecampus.util.DensityUtil;
 
 import static android.R.attr.width;

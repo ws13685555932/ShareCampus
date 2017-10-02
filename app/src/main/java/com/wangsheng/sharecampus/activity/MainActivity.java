@@ -84,6 +84,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         hideFragment(taskFragment);
                         showFragment(messageFragment);
                         break;
+                    case R.id.add_task:
+                        Intent intent = new Intent(MainActivity.this,CreateTaskActivity.class);
+                        startActivity(intent);
                 }
                 return true;
             }

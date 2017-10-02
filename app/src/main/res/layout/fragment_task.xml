@@ -33,13 +33,15 @@
                 android:layout_height="30dp"
                 android:layout_marginRight="16dp"
                 android:layout_gravity="right"
-                android:src="@drawable/ic_location"/>
+                android:src="@drawable/ic_toolbar_location"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:orientation="horizontal"
                 android:layout_marginRight="16dp"
                 android:background="@drawable/bg_tv_search"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:layout_height="32dp">
 
                 <ImageView
@@ -56,6 +58,7 @@
                     android:textColor="#4d4d4d"
                     android:textSize="14sp"
                     android:maxLines="1"
+
                     android:hint="搜索任务..."
                     android:background="#ffffff"/>
 
