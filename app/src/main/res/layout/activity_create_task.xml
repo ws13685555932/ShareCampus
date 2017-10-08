@@ -114,6 +114,7 @@
                     android:orientation="horizontal">
 
                     <com.wangsheng.sharecampus.view.IconTextView
+                        android:id="@+id/tv_choose_price"
                         android:layout_width="80dp"
                         android:layout_height="30dp"
                         android:drawableLeft="@drawable/task_price"

@@ -11,6 +11,7 @@ import android.util.Log;
 import com.wangsheng.sharecampus.R;
 import com.wangsheng.sharecampus.util.DensityUtil;
 
+import static android.R.attr.drawable;
 import static android.R.attr.width;
 
 /**
@@ -53,8 +54,16 @@ public class IconTextView extends AppCompatTextView {
         if (left != null) {
             Log.d(TAG, "initDrawable: ");
             left.setBounds(0,0,iconWidth,iconHeight);
-            this.setCompoundDrawables(left, null, null, null);
+            this.setCompoundDrawables(left, null, getCompoundDrawables()[2], null);
         }
+
+        Drawable right = this.getCompoundDrawables()[2];
+        if(right != null ){
+            right.setBounds(0,0,iconWidth,iconHeight);
+            this.setCompoundDrawables(getCompoundDrawables()[0],null,right,null);
+        }
+
+
     }
 
     private static final String TAG = "IconTextView";

@@ -36,4 +36,6 @@
 
     <color name="message_unread">#f74d2f</color>
 
+    <color name="transparent">#00ffffff</color>
+
 </resources>

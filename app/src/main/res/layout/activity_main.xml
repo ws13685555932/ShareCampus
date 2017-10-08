@@ -5,13 +5,14 @@
     android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:ignore="MissingPrefix">
+    android:background="@color/blue_primary"
+    tools:ignore="MissingPrefix"
+    tools:context="com.wangsheng.sharecampus.activity.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        android:orientation="vertical">
+        android:fitsSystemWindows="true">
 
         <android.support.design.widget.CoordinatorLayout
             android:layout_width="match_parent"
@@ -22,7 +23,7 @@
                 android:id="@+id/content_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="56dp"/>
+                android:layout_marginBottom="56dp" />
 
             <LinearLayout
                 android:id="@+id/ll_bottom"
@@ -34,7 +35,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="3dp"
-                    android:background="@drawable/gradient"/>
+                    android:background="@drawable/gradient" />
 
                 <android.support.design.widget.BottomNavigationView
                     android:id="@+id/bottom_nav"
@@ -47,8 +48,6 @@
 
 
             </LinearLayout>
-
-
 
 
         </android.support.design.widget.CoordinatorLayout>
