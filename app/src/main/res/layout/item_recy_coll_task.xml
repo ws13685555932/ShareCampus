@@ -46,7 +46,7 @@
                 android:layout_centerVertical="true"
                 android:text="办事"
                 android:textAlignment="center"
-                android:textColor="@color/blue_primary"
+                android:textColor="@color/brown_primary"
                 android:textSize="12sp" />
         </RelativeLayout>
 
@@ -91,7 +91,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:text="￥2.00"
-                android:textColor="@color/blue_primary"
+                android:textColor="@color/brown_primary"
                 android:textSize="18sp" />
 
             <TextView

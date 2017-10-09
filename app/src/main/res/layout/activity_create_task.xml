@@ -116,6 +116,7 @@
                     <com.wangsheng.sharecampus.view.IconTextView
                         android:id="@+id/tv_choose_price"
                         android:layout_width="80dp"
+                        android:drawableTint="@color/brown_primary"
                         android:layout_height="30dp"
                         android:drawableLeft="@drawable/task_price"
                         android:drawablePadding="4dp"
@@ -127,6 +128,7 @@
                     <com.wangsheng.sharecampus.view.IconTextView
                         android:layout_width="80dp"
                         android:layout_height="30dp"
+                        android:drawableTint="@color/brown_primary"
                         android:drawableLeft="@drawable/task_time_left"
                         android:drawablePadding="4dp"
                         android:gravity="center_vertical"
@@ -137,6 +139,7 @@
                     <com.wangsheng.sharecampus.view.IconTextView
                         android:layout_width="80dp"
                         android:layout_height="30dp"
+                        android:drawableTint="@color/brown_primary"
                         android:drawableLeft="@drawable/task_person_limit"
                         android:drawablePadding="4dp"
                         android:gravity="center_vertical"
@@ -206,11 +209,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:drawableTint="@color/brown_primary"
                     android:drawableLeft="@drawable/ic_location"
                     android:drawablePadding="4dp"
                     android:gravity="center_vertical"
                     android:text="获取定位"
-                    android:textColor="@color/blue_primary"
+                    android:textColor="@color/brown_primary"
                     android:textSize="14sp"
                     app:iconHeight="25dp"
                     app:iconWidth="25dp" />

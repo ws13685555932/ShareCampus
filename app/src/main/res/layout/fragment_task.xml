@@ -74,7 +74,7 @@
             app:tabGravity="fill"
             app:tabIndicatorColor="@color/white"
             app:tabSelectedTextColor="@color/white"
-            app:tabTextColor="@color/blue_light" />
+            app:tabTextColor="@color/brown_light" />
 
     </android.support.design.widget.AppBarLayout>
 

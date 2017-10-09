@@ -57,7 +57,8 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/task_communicate" />
+            android:backgroundTint="@color/brown_primary"
+            android:background="@drawable/task_communicate" />
 
         <ImageView
             android:id="@+id/iv_star"
@@ -66,7 +67,8 @@
             android:layout_centerVertical="true"
             android:layout_margin="10dp"
             android:layout_toRightOf="@id/iv_communicate"
-            android:src="@drawable/task_unstar" />
+            android:backgroundTint="@color/brown_primary"
+            android:background="@drawable/task_unstar" />
 
         <ImageView
             android:id="@+id/iv_share"
@@ -75,7 +77,8 @@
             android:layout_centerVertical="true"
             android:layout_margin="10dp"
             android:layout_toRightOf="@id/iv_star"
-            android:src="@drawable/task_share" />
+            android:backgroundTint="@color/brown_primary"
+            android:background="@drawable/task_share" />
 
 
         <Button
@@ -84,7 +87,7 @@
             android:layout_height="50dp"
             android:layout_alignParentRight="true"
             android:layout_below="@id/divider"
-            android:background="@color/blue_primary"
+            android:background="@color/brown_primary"
             android:text="接受任务"
             android:textColor="@color/white" />
 
@@ -139,18 +142,16 @@
                     android:layout_centerVertical="true"
                     android:orientation="horizontal">
 
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_gravity="center_vertical"
-                        android:src="@drawable/ic_integrity" />
-
-                    <TextView
+                    <com.wangsheng.sharecampus.view.IconTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
+                        app:iconWidth="18dp"
+                        app:iconHeight="18dp"
+                        android:drawablePadding="4dp"
+                        android:drawableLeft="@drawable/ic_integrity"
+                        android:drawableTint="@color/brown_primary"
                         android:text="95"
-                        android:textColor="@color/blue_primary"
+                        android:textColor="@color/brown_primary"
                         android:textSize="16sp" />
                 </LinearLayout>
 
@@ -180,14 +181,13 @@
                     android:layout_margin="8dp"
                     android:padding="2dp">
 
-                    <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginRight="4dp"
-                        android:src="@drawable/task_price" />
-
-                    <TextView
+                    <com.wangsheng.sharecampus.view.IconTextView
+                        app:iconWidth="18dp"
+                        app:iconHeight="18dp"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="4dp"
+                        android:drawableTint="@color/brown_primary"
+                        android:drawableLeft="@drawable/task_price"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -203,14 +203,13 @@
                     android:layout_margin="8dp"
                     android:padding="2dp">
 
-                    <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginRight="4dp"
-                        android:src="@drawable/task_time_left" />
-
-                    <TextView
+                    <com.wangsheng.sharecampus.view.IconTextView
+                        app:iconWidth="18dp"
+                        app:iconHeight="18dp"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="4dp"
+                        android:drawableTint="@color/brown_primary"
+                        android:drawableLeft="@drawable/task_time_left"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -225,14 +224,13 @@
                     android:layout_margin="8dp"
                     android:padding="2dp">
 
-                    <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginRight="4dp"
-                        android:src="@drawable/task_person_limit" />
-
-                    <TextView
+                    <com.wangsheng.sharecampus.view.IconTextView
+                        app:iconWidth="20dp"
+                        app:iconHeight="20dp"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="4dp"
+                        android:drawableTint="@color/brown_primary"
+                        android:drawableLeft="@drawable/task_person_limit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -257,7 +255,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:text="发布于2016年10月15日 23:22"
-                    android:textColor="@color/blue_primary"
+                    android:textColor="@color/brown_primary"
                     android:textSize="12sp" />
 
             </LinearLayout>

@@ -84,7 +84,7 @@ public class CategoryFragment extends LazyFragment {
         taskRecycleAdapter = new TaskRecycleAdapter(getActivity(),list);
         recyclerView.setAdapter(taskRecycleAdapter);
 
-        swipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.blue_primary));
+        swipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.brown_primary));
         //下拉刷新
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener(){
             public void onRefresh() {

@@ -23,6 +23,7 @@ import com.wangsheng.sharecampus.fragment.TaskFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -30,7 +31,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     DrawerLayout drawer;
     @BindView(R.id.bottom_nav)
     BottomNavigationView bottomNav;
-    @BindView(R.id.nav_view) NavigationView navigationView;
+    @BindView(R.id.nav_view)
+    NavigationView navigationView;
 
 
     Fragment taskFragment;
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.blue_primary));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.brown_primary));
             getWindow().getDecorView().setSystemUiVisibility(
                     View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
         }
@@ -88,6 +90,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         startActivity(intent);
                 }
                 return true;
+            }
+        });
+
+
+        View header = navigationView.getHeaderView(0);
+        CircleImageView ivUserIconNav = (CircleImageView) header.findViewById(R.id.civ_user_icon);
+        ivUserIconNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AboutMeActivity.class);
+                startActivity(intent);
             }
         });
     }

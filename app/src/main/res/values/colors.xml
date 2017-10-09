@@ -4,7 +4,9 @@
     <!--<color name="colorPrimaryDark">#303F9F</color>-->
     <!--<color name="colorAccent">#FF4081</color>-->
 
-    <color name="colorPrimary">#1f96f2</color>
+    <!--<color name="colorPrimary">#1f96f2</color>-->
+
+    <color name="colorPrimary">#9a667b</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#9b9b9b</color>
 
@@ -22,18 +24,21 @@
     <!--搜索栏背景颜色-->
     <color name="light_gray">#eeeeee</color>
 
-    <!--蓝色主题色-->
-    <color name="blue_primary">#1f96f2</color>
-    <color name="dark_blue">#3e8ded</color>
-    <!--蓝色主题配套浅色，tabLayout未选中tab颜色-->
-    <color name="blue_light">#9bdcff</color>
+    <!--棕色主题色-->
+    <color name="brown_primary">#9a667b</color>
+    <!--棕色深色主题色-->
+    <color name="dark_brown">#89586B</color>
+    <!--棕色主题配套浅色，tabLayout未选中tab颜色-->
+    <color name="brown_light">#C394B5</color>
     <!--一个小竖线的颜色-->
     <color name="gray_line">#737373</color>
 
+    <!--消息界面上面三个按钮-->
     <color name="blue_green">#44d8a6</color>
     <color name="yellow">#fdc65f</color>
     <color name="dark_pink">#ff5c77</color>
 
+    <!--未读消息颜色-->
     <color name="message_unread">#f74d2f</color>
 
     <color name="transparent">#00ffffff</color>
