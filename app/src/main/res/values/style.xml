@@ -19,4 +19,77 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="AboutMeTextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:layout_marginLeft">14dp</item>
+    </style>
+
+    <style name="EditInfoTextViewLeft">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/dark_black</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="EditInfoTextViewRight">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:background">@color/background</item>
+    </style>
+
+    <style name="MyMatisseTheme" parent="Matisse.Zhihu">
+        <!--<item name="colorPrimary">@color/zhihu_primary</item>-->
+        <!--<item name="colorPrimaryDark">@color/zhihu_primary_dark</item>-->
+        <!--<item name="toolbar">@style/Toolbar.Zhihu</item>-->
+        <!--<item name="album.title.color">@color/zhihu_album_title_text</item>-->
+        <!--<item name="album.count.color">@color/zhihu_album_count_text</item>-->
+        <!--<item name="album.selected">@android:color/white</item>-->
+        <!--<item name="album.placeholder">@color/zhihu_album_placeholder</item>-->
+        <!--<item name="album.emptyView">@drawable/ic_empty_zhihu</item>-->
+        <!--<item name="album.emptyView.color">@color/zhihu_empty_view</item>-->
+        <!--<item name="item.placeholder">@color/zhihu_item_placeholder</item>-->
+        <!--<item name="page.bg">@color/zhihu_page_bg</item>-->
+        <!--<item name="bottomToolbar.bg">@color/zhihu_bottom_toolbar_bg</item>-->
+        <!--<item name="bottomToolbar.preview.color">@color/zhihu_bottom_toolbar_preview</item>-->
+        <!--<item name="bottomToolbar.apply.color">@color/zhihu_bottom_toolbar_apply</item>-->
+        <!--<item name="listPopupWindowStyle">@style/Popup.Zhihu</item>-->
+        <!--<item name="capture.color">@color/zhihu_capture</item>-->
+
+
+
+
+        <item name="colorPrimary">@color/brown_primary</item>
+        <item name="colorPrimaryDark">@color/brown_primary</item>
+        <item name="toolbar">@style/Toolbar.MyTheme</item>
+        <item name="album.title.color">@color/white</item>
+        <item name="capture.color">@color/brown_primary</item>
+
+
+    </style>
+
+    <style name="Toolbar.MyTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:textColorPrimary">@color/white</item>
+
+    </style>
+
 </resources>

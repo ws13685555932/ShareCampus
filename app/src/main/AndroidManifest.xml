@@ -14,21 +14,19 @@
             android:name=".activity.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".activity.TaskActivity" />
         <activity android:name=".activity.MyWalletActivity" />
         <activity android:name=".activity.MyCollectionActivity" />
-        <activity android:name=".activity.CreateTaskActivity"></activity>
-        <activity android:name=".activity.AboutMeActivity">
-
-        </activity>
+        <activity android:name=".activity.CreateTaskActivity" />
+        <activity android:name=".activity.AboutMeActivity" />
+        <activity android:name=".activity.EditInfoActivity" />
+        <activity android:name=".activity.TaskAcceptActivity"></activity>
     </application>
 
 </manifest>

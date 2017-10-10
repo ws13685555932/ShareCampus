@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:textColor="@color/dark_black"
+        android:text="选择性别"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_pick_male"
+            android:orientation="vertical"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_margin="10dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_male"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/dialog_male"/>
+            <TextView
+                android:id="@+id/tv_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#3fbcef"
+                android:text="男"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_pick_secret"
+            android:orientation="vertical"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_margin="10dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_secret"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/dialog_secret_sex"/>
+            <TextView
+                android:id="@+id/tv_secret"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#8e569b"
+                android:text="保密"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_pick_female"
+            android:orientation="vertical"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_margin="10dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_female"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/dialog_female"/>
+            <TextView
+                android:id="@+id/tv_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#f59fbc"
+                android:text="女"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp">
+        <Button
+            android:layout_alignParentRight="true"
+            android:id="@+id/btn_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:text="确定"
+            android:layout_marginRight="16dp"
+            android:textColor="@color/colorPrimary"/>
+
+        <Button
+            android:layout_toLeftOf="@id/btn_confirm"
+            android:id="@+id/btn_cancel"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:text="取消"
+            android:textColor="@color/colorPrimary"/>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

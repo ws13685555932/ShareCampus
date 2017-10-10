@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wangsheng.sharecampus.activity.EditInfoActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_scrollFlags="scroll|enterAlways|snap">
+
+
+        <ImageView
+            android:id="@+id/toolbar_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="4dp"
+            android:src="@drawable/ic_toolbar_back" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="我的资料"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/EditInfoTextViewLeft"
+                    android:text="头像" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8dp"
+                    android:padding="8dp"
+                    android:src="@drawable/kangna" />
+
+                <View style="@style/Divider" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/EditInfoTextViewLeft"
+                    android:text="个人主页背景" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/kangna"
+                    android:padding="8dp" />
+
+                <View style="@style/Divider" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/EditInfoTextViewLeft"
+                    android:text="昵称" />
+
+
+                <TextView
+                    style="@style/EditInfoTextViewRight"
+                    android:text="陌上疏影凉" />
+
+
+                <View style="@style/Divider" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_pick_sex"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/EditInfoTextViewLeft"
+                    android:text="性别" />
+
+
+                <TextView
+                    style="@style/EditInfoTextViewRight"
+                    android:text="男" />
+
+                <View style="@style/Divider" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/EditInfoTextViewLeft"
+                    android:text="真实姓名" />
+
+                <TextView
+                    style="@style/EditInfoTextViewRight"
+                    android:text="王胜" />
+
+                <View style="@style/Divider" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_birthday"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/EditInfoTextViewLeft"
+                    android:text="生日" />
+
+                <TextView
+                    style="@style/EditInfoTextViewRight"
+                    android:text="1996-10-5" />
+
+                <View style="@style/Divider" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/EditInfoTextViewLeft"
+                    android:text="地区" />
+
+                <TextView
+                    style="@style/EditInfoTextViewRight"
+                    android:text="江苏省 南京市" />
+
+                <View style="@style/Divider" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/EditInfoTextViewLeft"
+                    android:text="学校" />
+
+                <TextView
+                    style="@style/EditInfoTextViewRight"
+                    android:text="河海大学" />
+
+                <View style="@style/Divider" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/label_left"
+                    style="@style/EditInfoTextViewLeft"
+                    android:text="简介" />
+
+                <TextView
+                    style="@style/EditInfoTextViewRight"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@id/label_left"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="hhh"
+                    android:textAlignment="textEnd" />
+
+                <View style="@style/Divider" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="3dp"-->
+        <!--android:background="@drawable/gradient_reverse"-->
+        <!--android:layout_below="@id/toolbar">-->
+
+        <!--</View>-->
+    </ScrollView>
+
+</RelativeLayout>

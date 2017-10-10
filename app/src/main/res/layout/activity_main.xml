@@ -34,8 +34,8 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:background="@drawable/gradient" />
+                    android:layout_height="0.8dp"
+                    android:background="@color/light_gray" />
 
                 <android.support.design.widget.BottomNavigationView
                     android:id="@+id/bottom_nav"

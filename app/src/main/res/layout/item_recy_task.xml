@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
+    android:layout_margin="4dp"
     android:background="@color/white"
     android:elevation="1dp"
     android:gravity="center"
@@ -69,6 +69,31 @@
                 android:textColor="@color/dark_black"
                 android:textSize="14sp" />
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/ic_label"
+                    android:backgroundTint="@color/dark_pink"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="求勾搭"
+                    android:textColor="@color/dark_pink"
+
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -91,6 +116,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:text="￥2.00"
+                android:textStyle="bold"
                 android:textColor="@color/brown_primary"
                 android:textSize="18sp" />
 

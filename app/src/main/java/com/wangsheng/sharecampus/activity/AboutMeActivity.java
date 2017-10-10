@@ -1,34 +1,34 @@
 package com.wangsheng.sharecampus.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.wangsheng.sharecampus.R;
-import com.wangsheng.sharecampus.adapter.CategoryPageAdapter;
-import com.wangsheng.sharecampus.fragment.CategoryFragment;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class AboutMeActivity extends AppCompatActivity {
 
     @BindView(R.id.imageview)
     ImageView ivMyBg;
-    @BindView(R.id.tab_layout)
-    TabLayout tabLayout;
-    @BindView(R.id.view_pager)
-    ViewPager viewPager;
+    @BindView(R.id.toolbar_back)
+    ImageView toolbarBack;
+    @BindView(R.id.toolbar_user_name)
+    TextView toolbarUserName;
+    @BindView(R.id.toolbar_share)
+    ImageView toolbarShare;
+    @BindView(R.id.btn_edit_my_info)
+    Button btnEditMyInfo;
 
 
     @Override
@@ -50,19 +50,21 @@ public class AboutMeActivity extends AppCompatActivity {
                 .load(R.drawable.guilty_crown)
                 .into(ivMyBg);
 
-        List<Fragment> fragList = new ArrayList<>();
-        CategoryFragment cate1 = new CategoryFragment();
-        CategoryFragment cate2 = new CategoryFragment();
-        CategoryFragment cate3 = new CategoryFragment();
+    }
 
-        fragList.add(cate1);
-        fragList.add(cate2);
-        fragList.add(cate3);
+    @OnClick({R.id.toolbar_back, R.id.toolbar_share})
+    public void toolbarClicked(View view) {
+        switch (view.getId()) {
+            case R.id.toolbar_back:
+                break;
+            case R.id.toolbar_share:
+                break;
+        }
+    }
 
-        viewPager.setAdapter(new CategoryPageAdapter(getSupportFragmentManager(), fragList));
-        tabLayout.setupWithViewPager(viewPager);
-        tabLayout.getTabAt(0).setText("ta发出的");
-        tabLayout.getTabAt(1).setText("ta接收的");
-        tabLayout.getTabAt(2).setText("关于ta");
+    @OnClick(R.id.btn_edit_my_info)
+    public void editMyInfo() {
+        Intent intent = new Intent(this,EditInfoActivity.class);
+        startActivity(intent);
     }
 }

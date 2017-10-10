@@ -249,6 +249,14 @@
                     android:textColor="@color/dark_gray"
                     android:textSize="14sp" />
 
+                <GridView
+                    android:layout_marginBottom="8dp"
+                    android:id="@+id/grid_pics"
+                    android:horizontalSpacing="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="4"></GridView>
+
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -257,6 +265,8 @@
                     android:text="发布于2016年10月15日 23:22"
                     android:textColor="@color/brown_primary"
                     android:textSize="12sp" />
+
+
 
             </LinearLayout>
 
