@@ -1,29 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/nav_camera"
-        android:icon="@drawable/ic_menu_camera"
-        android:title="发出的任务" />
-    <item
-        android:id="@+id/nav_gallery"
-        android:icon="@drawable/ic_menu_gallery"
-        android:title="接受的任务" />
-    <item
-        android:id="@+id/nav_slideshow"
-        android:icon="@drawable/ic_menu_slideshow"
-        android:title="我的钱包" />
-    <item
-        android:id="@+id/nav_share"
-        android:icon="@drawable/ic_menu_share"
-        android:title="诚信值" />
-    <item
-        android:id="@+id/nav_send"
-        android:icon="@drawable/ic_menu_send"
-        android:title="我的收藏" />
-    <item
-        android:id="@+id/nav_manage"
-        android:icon="@drawable/ic_menu_manage"
-        android:title="设置" />
+    <group android:id="@+id/group1">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/nav_send"
+            android:title="发出的任务" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/nav_recieve"
+            android:title="接受的任务" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/nav_wallet"
+            android:title="我的钱包" />
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/nav_integrity"
+            android:title="诚信值" />
+    </group>
+    <group android:id="@+id/group2">
+        <item
+            android:id="@+id/nav_eye"
+            android:icon="@drawable/nav_eye"
+            android:title="我的关注" />
+        <item
+            android:id="@+id/nav_send"
+            android:icon="@drawable/nav_star"
+            android:title="我的收藏" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/nav_setting"
+            android:title="设置" />
+    </group>
 
 </menu>
