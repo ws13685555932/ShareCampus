@@ -45,6 +45,8 @@ public class EditInfoActivity extends AppCompatActivity {
     public void onBirthdarClicked() {
         Calendar c = Calendar.getInstance(Locale.CHINA);
         mYear = c.get(Calendar.YEAR);
+        mMonth = c.get(Calendar.MONTH);
+        mDay = c.get(Calendar.DAY_OF_MONTH);
         DatePickerDialog pickDateDialog = new DatePickerDialog(this, R.style.MyDatePickerDialog, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {

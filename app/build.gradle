@@ -49,6 +49,7 @@ dependencies {
     compile 'com.zhy:base-rvadapter:3.0.3'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    compile 'cn.bingoogolapple:bga-banner:2.1.7@aar'
     compile 'com.zhy:base-adapter:3.0.3'
     compile 'com.zhihu.android:matisse:0.4.3'
 }

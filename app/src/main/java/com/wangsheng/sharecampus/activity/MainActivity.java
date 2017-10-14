@@ -18,7 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.wangsheng.sharecampus.R;
-import com.wangsheng.sharecampus.fragment.MessageFragment;
+import com.wangsheng.sharecampus.fragment.SkillFragment;
 import com.wangsheng.sharecampus.fragment.TaskFragment;
 
 import butterknife.BindView;
@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     NavigationView navigationView;
 
 
-    Fragment taskFragment;
-    Fragment messageFragment;
+    Fragment skill;
+    Fragment task;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,25 +65,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        taskFragment = new TaskFragment();
-        messageFragment = new MessageFragment();
+        skill = new SkillFragment();
+        task = new TaskFragment();
 
-        addFragment(R.id.content_layout,taskFragment);
-        addFragment(R.id.content_layout, messageFragment);
+        addFragment(R.id.content_layout, skill);
+        addFragment(R.id.content_layout, task);
 
-        hideFragment(messageFragment);
+        hideFragment(task);
 //
         bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.task:
-                        hideFragment(messageFragment);
-                        showFragment(taskFragment);
+                        hideFragment(task);
+                        showFragment(skill);
                         break;
                     case R.id.message:
-                        hideFragment(taskFragment);
-                        showFragment(messageFragment);
+                        hideFragment(skill);
+                        showFragment(task);
                         break;
                     case R.id.add_task:
                         Intent intent = new Intent(MainActivity.this,CreateTaskActivity.class);

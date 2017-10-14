@@ -51,18 +51,21 @@ public class TaskFragment extends Fragment {
         unbinder = ButterKnife.bind(this, view);
 
         List<Fragment> fragList = new ArrayList<>();
-        CategoryFragment cate1 = new CategoryFragment();
-        CategoryFragment cate2 = new CategoryFragment();
-        CategoryFragment cate3 = new CategoryFragment();
+        for (int i = 0; i < 14; i++) {
+            fragList.add(new CategoryFragment());
+        }
 
-        fragList.add(cate1);
-        fragList.add(cate2);
-        fragList.add(cate3);
         viewPager.setAdapter(new CategoryPageAdapter(getFragmentManager(),fragList));
         tabLayout.setupWithViewPager(viewPager);
-        tabLayout.getTabAt(0).setText("全部");
-        tabLayout.getTabAt(1).setText("找人");
-        tabLayout.getTabAt(2).setText("办事");
+
+        String[] tabArr = new String[]{
+                "学习答疑","生活帮助","学习辅导","代取代购","物品租借",
+                "电脑维修","失物招领","竞赛队友","合租室友",
+                "考研研友","健身伙伴","摄影剪辑","修图海报", "兼职同行"
+        };
+        for (int i = 0; i < 14; i++) {
+            tabLayout.getTabAt(i).setText(tabArr[i]);
+        }
         return view;
     }
 

@@ -46,9 +46,20 @@ public class CreateTaskActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         List<String> labelList = new ArrayList<>();
+        labelList.add("学习答疑");
+        labelList.add("生活帮助");
+        labelList.add("学习辅导");
+        labelList.add("代取代购");
+        labelList.add("物品租借");
+        labelList.add("电脑维修");
         labelList.add("失物招领");
-        labelList.add("勾搭");
-        labelList.add("代课");
+        labelList.add("竞赛队友");
+        labelList.add("合租室友");
+        labelList.add("考研研友");
+        labelList.add("健身伙伴");
+        labelList.add("摄影剪辑");
+        labelList.add("修图海报");
+        labelList.add("兼职同行");
 
         tflLabels.setAdapter(new TagAdapter<String>(labelList) {
             @Override

@@ -43,4 +43,11 @@
 
     <color name="transparent">#00ffffff</color>
 
+
+    <color name="skill_color1">#e66d8a</color>
+    <color name="skill_color2">#efad72</color>
+    <color name="skill_color3">#f9d26c</color>
+    <color name="skill_color4">#8aaace</color>
+
+
 </resources>
