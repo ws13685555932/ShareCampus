@@ -52,7 +52,7 @@ public class TaskFragment extends Fragment {
 
         List<Fragment> fragList = new ArrayList<>();
         for (int i = 0; i < 14; i++) {
-            fragList.add(new CategoryFragment());
+            fragList.add(new CategoryFragment(i+1));
         }
 
         viewPager.setAdapter(new CategoryPageAdapter(getFragmentManager(),fragList));

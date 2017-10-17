@@ -10,8 +10,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.wangsheng.sharecampus.R;
+import com.wangsheng.sharecampus.bean.Task;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
 
@@ -22,7 +25,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class TaskActivity extends AppCompatActivity {
+public class TaskActivity extends AppCompatActivity implements View.OnClickListener{
 
     @BindView(R.id.recycler_leave_message)
     RecyclerView recyclerLeaveMessage;
@@ -32,6 +35,13 @@ public class TaskActivity extends AppCompatActivity {
     Button btnAccept;
     @BindView(R.id.grid_pics)
     GridView gridPics;
+    @BindView(R.id.task_title)TextView title;
+    @BindView(R.id.task_content)TextView content;
+    @BindView(R.id.task_price)TextView price;
+    @BindView(R.id.task_user_name)TextView name;
+    @BindView(R.id.back)ImageView back;
+    @BindView(R.id.task_time)TextView time;
+    public static Task task;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,12 +86,26 @@ public class TaskActivity extends AppCompatActivity {
 
             }
         });
-
+        title.setText(task.getTaskTitle());
+        content.setText(task.getTaskContent());
+        price.setText("悬赏金额：￥"+task.getTaskPrice());
+        name.setText(task.getCreaterName());
+        time.setText("发布于2016年10月15日 "+task.getCreateTime());
+        back.setOnClickListener(this);
     }
 
     @OnClick(R.id.btn_accept)
     public void onViewClicked() {
         Intent intent = new Intent(this, TaskAcceptActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.back:
+                TaskActivity.this.finish();
+                break;
+        }
     }
 }

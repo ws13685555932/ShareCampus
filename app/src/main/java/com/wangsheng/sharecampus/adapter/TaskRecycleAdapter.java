@@ -6,11 +6,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.wangsheng.sharecampus.R;
 import com.wangsheng.sharecampus.activity.TaskActivity;
 import com.wangsheng.sharecampus.bean.Task;
-import com.wangsheng.sharecampus.R;
 
 import java.util.List;
 
@@ -18,73 +19,95 @@ import java.util.List;
  * Created by windows8 on 2017/9/28.
  */
 
-public class TaskRecycleAdapter extends RecyclerView.Adapter<TaskRecycleAdapter.MyViewHolder>{
+public class TaskRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener, View.OnLongClickListener {
     private Context mContext;
     private List<Task> mData;
-    //普通布局的type
-    static final int TYPE_ITEM = 0;
-    //脚布局
-
-    public TaskRecycleAdapter(Context mContext, List<Task> mData) {
+    public TaskRecycleAdapter(Context mContext,List<Task> mData){
         this.mContext = mContext;
         this.mData = mData;
     }
 
     @Override
     public int getItemCount() {
-        return mData != null ? mData.size() + 1 : 0;
+        return mData.size();
     }
 
+    @Override
+    public void onClick(View view) {
 
-    //自定义ViewHolder，用于加载图片
+    }
+
+    @Override
+    public boolean onLongClick(View view) {
+        return false;
+    }
+    //自定义ViewHolder
     class MyViewHolder extends RecyclerView.ViewHolder {
         TextView title;
+        TextView content;
+        TextView name;
+        TextView price;
+        TextView time;
+        LinearLayout task;
 
         public MyViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.task_title);
+            content = (TextView) view.findViewById(R.id.text_content);
+            name = (TextView) view.findViewById(R.id.task_user_name);
+            price = (TextView) view.findViewById(R.id.text_price);
+            time = (TextView) view.findViewById(R.id.text_time);
+            task = (LinearLayout) view.findViewById(R.id.task);
         }
     }
 
 
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-//        if (viewType == TYPE_ITEM) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.item_recy_task, parent,
-                false);
-        MyViewHolder holder = new MyViewHolder(view);
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View view = LayoutInflater.from(mContext).inflate(R.layout.item_recy_task, parent,
+                    false);
+            MyViewHolder holder = new MyViewHolder(view);
 
-        view.setOnClickListener(new View.OnClickListener() {
+            //给布局设置点击和长点击监听
+            view.setOnClickListener(this);
+            view.setOnLongClickListener(this);
+
+            return holder;
+    }
+
+    @Override
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
+        ((MyViewHolder) holder).title.setText(mData.get(position).getTaskTitle());
+        ((MyViewHolder) holder).name.setText(mData.get(position).getCreaterName());
+        ((MyViewHolder) holder).price.setText(mData.get(position).getTaskPrice()+"金");
+        ((MyViewHolder) holder).content.setText(mData.get(position).getTaskContent());
+        ((MyViewHolder) holder).time.setText(mData.get(position).getCreateTime());
+        ((MyViewHolder) holder).task.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                TaskActivity.task = mData.get(position);
                 Intent intent = new Intent(mContext, TaskActivity.class);
                 mContext.startActivity(intent);
             }
         });
-//        //给布局设置点击和长点击监听
-//        view.setOnClickListener(this);
-//        view.setOnLongClickListener(this);
-
-        return holder;
-//        }
-//        else if (viewType == TYPE_FOOTER) {
-//            //脚布局
-//            View view = View.inflate(mContext, R.layout.item_recy_foot, null);
-//            FootViewHolder footViewHolder = new FootViewHolder(view);
-//            return footViewHolder;
-//        }
-//        return null;
-    }
-
-    @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
-
     }
 
 //    @Override
-//    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+//    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
 //        if (holder instanceof MyViewHolder) {
 //            ((MyViewHolder) holder).title.setText(mData.get(position).getTaskTitle());
+//            ((MyViewHolder) holder).name.setText(mData.get(position).getCreaterName());
+//            ((MyViewHolder) holder).price.setText(mData.get(position).getTaskPrice()+"金");
+//            ((MyViewHolder) holder).content.setText(mData.get(position).getTaskContent());
+//            ((MyViewHolder) holder).time.setText(mData.get(position).getCreateTime());
+//            ((MyViewHolder) holder).task.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    TaskActivity.task = mData.get(position);
+//                    Intent intent = new Intent(mContext, TaskActivity.class);
+//                    mContext.startActivity(intent);
+//                }
+//            });
 //        } else if (holder instanceof FootViewHolder) {
 //            FootViewHolder footViewHolder = (FootViewHolder) holder;
 //            if (position == 0) {//如果第一个就是脚布局,,那就让他隐藏
@@ -125,8 +148,8 @@ public class TaskRecycleAdapter extends RecyclerView.Adapter<TaskRecycleAdapter.
 //            return TYPE_ITEM;
 //        }
 //    }
-
-
+//
+//
 //    /**
 //     * 脚布局的ViewHolder
 //     */
@@ -156,5 +179,6 @@ public class TaskRecycleAdapter extends RecyclerView.Adapter<TaskRecycleAdapter.
 //        this.footer_state = state;
 //        notifyDataSetChanged();
 //    }
+
 
 }

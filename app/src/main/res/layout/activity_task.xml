@@ -17,6 +17,7 @@
 
 
         <ImageView
+            android:id="@+id/back"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/ic_toolbar_back" />
@@ -126,6 +127,7 @@
                     android:src="@drawable/kangna" />
 
                 <TextView
+                    android:id="@+id/task_user_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -168,6 +170,7 @@
                 android:padding="8dp">
 
                 <TextView
+                    android:id="@+id/task_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -182,6 +185,7 @@
                     android:padding="2dp">
 
                     <com.wangsheng.sharecampus.view.IconTextView
+                        android:id="@+id/task_price"
                         app:iconWidth="18dp"
                         app:iconHeight="18dp"
                         android:gravity="center_vertical"
@@ -239,6 +243,7 @@
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/task_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
@@ -259,6 +264,7 @@
 
 
                 <TextView
+                    android:id="@+id/task_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"

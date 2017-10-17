@@ -52,4 +52,6 @@ dependencies {
     compile 'cn.bingoogolapple:bga-banner:2.1.7@aar'
     compile 'com.zhy:base-adapter:3.0.3'
     compile 'com.zhihu.android:matisse:0.4.3'
+    // https://github.com/WuXiaolong/PullLoadMoreRecyclerView 自带下拉刷新个上拉加载的recyclerview
+    compile 'com.wuxiaolong.pullloadmorerecyclerview:library:1.1.2'
 }

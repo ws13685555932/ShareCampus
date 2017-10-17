@@ -10,6 +10,8 @@
     app:cardCornerRadius="4dp">
 
     <LinearLayout
+        android:id="@+id/task"
+        android:background="@drawable/bg_layoutstyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -40,6 +42,7 @@
                 android:textSize="12sp" />
 
             <TextView
+                android:id="@+id/text_resttime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -69,32 +72,10 @@
                 android:textColor="@color/dark_black"
                 android:textSize="14sp" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/ic_label"
-                    android:backgroundTint="@color/dark_pink"/>
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="求勾搭"
-                    android:textColor="@color/dark_pink"
-
-                    android:textSize="12sp" />
-            </LinearLayout>
-
 
 
             <TextView
+                android:id="@+id/text_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
@@ -111,6 +92,7 @@
             android:layout_margin="4dp">
 
             <TextView
+                android:id="@+id/text_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -121,6 +103,7 @@
                 android:textSize="18sp" />
 
             <TextView
+                android:id="@+id/text_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"

@@ -15,7 +15,6 @@ import com.wangsheng.sharecampus.view.IconTextView;
 import com.zhihu.matisse.Matisse;
 import com.zhihu.matisse.MimeType;
 import com.zhihu.matisse.engine.impl.GlideEngine;
-import com.zhihu.matisse.filter.Filter;
 import com.zhy.adapter.abslistview.CommonAdapter;
 import com.zhy.adapter.abslistview.ViewHolder;
 import com.zhy.view.flowlayout.FlowLayout;
@@ -29,7 +28,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class CreateTaskActivity extends AppCompatActivity {
+public class CreateTaskActivity extends AppCompatActivity implements View.OnClickListener{
 
     private static final int REQUEST_CODE_CHOOSE = 1001;
     @BindView(R.id.tfl_labels)
@@ -38,6 +37,7 @@ public class CreateTaskActivity extends AppCompatActivity {
     IconTextView tvChoosePrice;
     @BindView(R.id.grid_add_pic)
     GridView gridAddPic;
+    @BindView(R.id.image_back)ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,5 +107,14 @@ public class CreateTaskActivity extends AppCompatActivity {
     public void onViewClicked() {
         ChooseLimitDialog dialog = new ChooseLimitDialog();
         dialog.show(getFragmentManager(), ChooseLimitDialog.TAG);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.image_back:
+                CreateTaskActivity.this.finish();
+                break;
+        }
     }
 }

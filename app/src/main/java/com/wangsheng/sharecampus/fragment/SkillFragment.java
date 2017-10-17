@@ -5,21 +5,15 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseExpandableListAdapter;
 import android.widget.GridView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.wangsheng.sharecampus.R;
-import com.wangsheng.sharecampus.adapter.SkillRecyclerAdapter;
-import com.wangsheng.sharecampus.adapter.TaskRecycleAdapter;
 import com.wangsheng.sharecampus.bean.SkillBean;
-import com.wangsheng.sharecampus.bean.Task;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
 
@@ -130,18 +124,23 @@ public class SkillFragment extends Fragment {
                 holder.setText(R.id.tv_skill, skillBean.getSkillTotal());
                 GridView grid = holder.getView(R.id.grid_skill);
                 RelativeLayout rlBackground = holder.getView(R.id.rl_background);
+                TextView title = holder.getView(R.id.tv_skill);
                 switch (skillBean.getCateId()) {
                     case 0:
                         rlBackground.setBackgroundColor(getResources().getColor(R.color.skill_color1));
+                        title.setText("课余生活");
                         break;
                     case 1:
                         rlBackground.setBackgroundColor(getResources().getColor(R.color.skill_color2));
+                        title.setText("专业学习");
                         break;
                     case 2:
                         rlBackground.setBackgroundColor(getResources().getColor(R.color.skill_color3));
+                        title.setText("能力培养");
                         break;
                     case 3:
                         rlBackground.setBackgroundColor(getResources().getColor(R.color.skill_color4));
+                        title.setText("公益生活");
                         break;
                 }
                 List<String> labelList = skillBean.getSkillList();
