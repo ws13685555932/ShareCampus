@@ -243,6 +243,6 @@ public class CategoryFragment extends LazyFragment {
             case PARTTIMEJOB:
                 break;
         }
-        return null;
+        return tasks;
     }
 }
