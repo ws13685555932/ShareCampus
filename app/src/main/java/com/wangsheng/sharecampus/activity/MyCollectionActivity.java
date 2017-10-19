@@ -34,8 +34,10 @@ public class MyCollectionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_collection);
         ButterKnife.bind(this);
         List<Fragment> fragList = new ArrayList<>();
-        CollectionFragment cate1 = new CollectionFragment(0);
-        CollectionFragment cate2 = new CollectionFragment(1);
+        CollectionFragment cate1 = new CollectionFragment();
+        cate1.type = 0;
+        CollectionFragment cate2 = new CollectionFragment();
+        cate2.type = 1;
 
         fragList.add(cate1);
         fragList.add(cate2);

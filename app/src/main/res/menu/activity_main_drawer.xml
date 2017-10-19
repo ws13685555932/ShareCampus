@@ -21,6 +21,10 @@
     </group>
     <group android:id="@+id/group2">
         <item
+            android:id="@+id/nav_message"
+            android:icon="@drawable/bottom_item_message"
+            android:title="我的消息" />
+        <item
             android:id="@+id/nav_eye"
             android:icon="@drawable/nav_eye"
             android:title="我的关注" />

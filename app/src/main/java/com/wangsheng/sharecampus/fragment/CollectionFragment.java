@@ -29,12 +29,9 @@ public class CollectionFragment extends LazyFragment {
     @BindView(R.id.iv_recycle)RecyclerView recyclerView;
     CollectionPageAdapter collectionPageAdapter;
     Unbinder unbinder;
-    private int type = 0;//该界面显示为收藏任务还是收藏人，人0，任务1
+    public int type = 0;//该界面显示为收藏任务还是收藏人，人0，任务1
     private List<Object> list = new ArrayList<Object>();
     private GridLayoutManager mLayoutManager;
-    public CollectionFragment(int type){
-        this.type = type;
-    }
 
     @Nullable
     @Override

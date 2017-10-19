@@ -97,10 +97,16 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
-                android:text="2金"
+                android:text="2"
                 android:textStyle="bold"
                 android:textColor="@color/brown_primary"
                 android:textSize="18sp" />
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/task_price"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/text_price"/>
 
             <TextView
                 android:id="@+id/text_time"

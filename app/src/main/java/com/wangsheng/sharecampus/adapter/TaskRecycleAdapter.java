@@ -15,6 +15,9 @@ import com.wangsheng.sharecampus.bean.Task;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by windows8 on 2017/9/28.
  */
@@ -43,21 +46,22 @@ public class TaskRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     }
     //自定义ViewHolder
     class MyViewHolder extends RecyclerView.ViewHolder {
+        @BindView(R.id.task_title)
         TextView title;
+        @BindView(R.id.text_content)
         TextView content;
+        @BindView(R.id.task_user_name)
         TextView name;
+        @BindView(R.id.text_price)
         TextView price;
+        @BindView(R.id.text_time)
         TextView time;
+        @BindView(R.id.task)
         LinearLayout task;
 
         public MyViewHolder(View view) {
             super(view);
-            title = (TextView) view.findViewById(R.id.task_title);
-            content = (TextView) view.findViewById(R.id.text_content);
-            name = (TextView) view.findViewById(R.id.task_user_name);
-            price = (TextView) view.findViewById(R.id.text_price);
-            time = (TextView) view.findViewById(R.id.text_time);
-            task = (LinearLayout) view.findViewById(R.id.task);
+            ButterKnife.bind(this, view);
         }
     }
 
@@ -79,7 +83,7 @@ public class TaskRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         ((MyViewHolder) holder).title.setText(mData.get(position).getTaskTitle());
         ((MyViewHolder) holder).name.setText(mData.get(position).getCreaterName());
-        ((MyViewHolder) holder).price.setText(mData.get(position).getTaskPrice()+"金");
+        ((MyViewHolder) holder).price.setText(mData.get(position).getTaskPrice()+"");
         ((MyViewHolder) holder).content.setText(mData.get(position).getTaskContent());
         ((MyViewHolder) holder).time.setText(mData.get(position).getCreateTime());
         ((MyViewHolder) holder).task.setOnClickListener(new View.OnClickListener() {

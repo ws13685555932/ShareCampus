@@ -286,13 +286,24 @@
                 android:orientation="vertical"
                 android:padding="8dp">
 
-                <TextView
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:text="留言(14)"
-                    android:textColor="@color/dark_black"
-                    android:textSize="14sp" />
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="留言(14)"
+                        android:textColor="@color/dark_black"
+                        android:textSize="14sp"
+                        android:id="@+id/textView2" />
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/task_write"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true" />
+                </RelativeLayout>
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler_leave_message"

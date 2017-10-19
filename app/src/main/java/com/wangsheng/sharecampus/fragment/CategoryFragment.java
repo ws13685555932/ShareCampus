@@ -35,11 +35,7 @@ public class CategoryFragment extends LazyFragment {
 
     List<Task> list = new ArrayList<Task>();
     TaskRecycleAdapter taskRecycleAdapter;
-    private int type;
-
-    public CategoryFragment(int type) {
-        this.type = type;
-    }
+    public int type;
 
     @Nullable
     @Override
@@ -76,13 +72,15 @@ public class CategoryFragment extends LazyFragment {
             @Override
             public void onLoadMore() {
                 recyclerView.setFooterViewText("正在加载");
-                new Handler().postDelayed(new Runnable(){
+                new Handler().postDelayed(new Runnable() {
+
+                    @Override
                     public void run() {
-                        //execute the task
+                        //do something
                         getMoreData();
+                        recyclerView.setPullLoadMoreCompleted();
                     }
-                }, 2000);
-                recyclerView.setPullLoadMoreCompleted();
+                }, 1000);
             }
         });
     }
@@ -109,20 +107,18 @@ public class CategoryFragment extends LazyFragment {
         list.add(task);
         taskRecycleAdapter.notifyDataSetChanged();
     }
-    public static final int STUDYANSWER = 1;//学习答疑
-    public static final int LIFEHELP = 2;//生活帮助
-    public static final int STUDYHELP = 3;//学习辅导
-    public static final int PURCHASINGAGENT = 4;//代取代购
-    public static final int RENT = 5;//物品租借
-    public static final int COMPUTERREPAIR = 6;//电脑维修
-    public static final int LOSTANDFOUND = 7;//失物招领
-    public static final int MATCHTEAMMATE = 8;//竞赛队友
-    public static final int ROOMMATESHARING = 9;//合租室友
-    public static final int FRIENDS = 10;//考研研友
-    public static final int BODYBUILDING = 11;//健身伙伴
-    public static final int TAKINGPHOTO = 12;//摄影剪辑
-    public static final int PS = 13;//修图海报
-    public static final int PARTTIMEJOB = 14;//兼职同行
+    public static final int STUDYANSWER = 1;//学习提问
+    public static final int LIFEHELP = 2;//生活提问
+    public static final int PURCHASINGAGENT = 3;//代取代购
+    public static final int LOSTANDFOUND = 4;//失物招领
+    public static final int MATCHTEAMMATE = 5;//竞赛队友
+    public static final int FRIENDS = 6;//考研研友
+    public static final int RENT = 7;//物品租借
+    public static final int COMPUTERREPAIR = 8;//物品维修
+    public static final int BODYBUILDING = 9;//健身伙伴
+    public static final int TAKINGPHOTO = 10;//摄影剪辑
+    public static final int PS = 11;//修图海报
+    public static final int PARTTIMEJOB = 12;//兼职同行
     public List<Task> getData(int type){
         List<Task> tasks = new ArrayList<Task>();
         switch (type){
@@ -218,30 +214,6 @@ public class CategoryFragment extends LazyFragment {
                 task12.setTaskPrice(20);
                 tasks.add(task12);
                 return tasks;
-            case STUDYHELP:
-                break;
-            case PURCHASINGAGENT:
-                break;
-            case RENT:
-                break;
-            case COMPUTERREPAIR:
-                break;
-            case LOSTANDFOUND:
-                break;
-            case MATCHTEAMMATE:
-                break;
-            case ROOMMATESHARING:
-                break;
-            case FRIENDS:
-                break;
-            case BODYBUILDING:
-                break;
-            case TAKINGPHOTO:
-                break;
-            case PS:
-                break;
-            case PARTTIMEJOB:
-                break;
         }
         return tasks;
     }

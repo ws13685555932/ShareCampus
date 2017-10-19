@@ -27,8 +27,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
-    @BindView(R.id.drawer)
-    DrawerLayout drawer;
+    public static DrawerLayout drawer;
     @BindView(R.id.bottom_nav)
     BottomNavigationView bottomNav;
     @BindView(R.id.nav_view)
@@ -49,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        drawer = (DrawerLayout) findViewById(R.id.drawer);
         navigationView.setNavigationItemSelectedListener(this);
 
         drawer.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
@@ -141,6 +141,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_send:
                 Intent collection = new Intent(MainActivity.this, MyCollectionActivity.class);
                 startActivity(collection);
+                break;
+            case R.id.nav_message:
+                Intent message = new Intent(MainActivity.this, MessageActivity.class);
+                startActivity(message);
                 break;
         }
 
