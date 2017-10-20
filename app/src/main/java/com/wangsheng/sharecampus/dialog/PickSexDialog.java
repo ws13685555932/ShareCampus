@@ -115,6 +115,9 @@ public class PickSexDialog extends DialogFragment {
     public interface ClickListener {
         void onSexPicked(String sex);
     }
+    public void setmClickListener(ClickListener l){
+        mClickListener = l;
+    }
 
     public void setClickListener(ClickListener mClickListener) {
         this.mClickListener = mClickListener;

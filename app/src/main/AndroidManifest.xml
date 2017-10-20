@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wangsheng.sharecampus">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -25,9 +28,12 @@
         <activity android:name=".activity.MyCollectionActivity" />
         <activity android:name=".activity.CreateTaskActivity" />
         <activity android:name=".activity.AboutMeActivity" />
-        <activity android:name=".activity.EditInfoActivity" />
-        <activity android:name=".activity.TaskAcceptActivity"/>
-        <activity android:name=".activity.MessageActivity"/>
+        <activity
+            android:name=".activity.EditInfoActivity"
+            android:exported="true" />
+        <activity android:name=".activity.TaskAcceptActivity" />
+        <activity android:name=".activity.MessageActivity" />
+        <activity android:name=".activity.SearchActivity"></activity>
     </application>
 
 </manifest>

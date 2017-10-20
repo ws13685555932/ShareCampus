@@ -28,7 +28,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class CreateTaskActivity extends AppCompatActivity implements View.OnClickListener{
+public class CreateTaskActivity extends AppCompatActivity{
 
     private static final int REQUEST_CODE_CHOOSE = 1001;
     @BindView(R.id.tfl_labels)
@@ -44,7 +44,6 @@ public class CreateTaskActivity extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_task);
         ButterKnife.bind(this);
-
         List<String> labelList = new ArrayList<>();
         labelList.add("学习提问");
         labelList.add("生活提问");
@@ -107,12 +106,8 @@ public class CreateTaskActivity extends AppCompatActivity implements View.OnClic
         dialog.show(getFragmentManager(), ChooseLimitDialog.TAG);
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.image_back:
-                CreateTaskActivity.this.finish();
-                break;
-        }
+    @OnClick(R.id.image_back)
+    public void back(){
+        CreateTaskActivity.this.finish();
     }
 }

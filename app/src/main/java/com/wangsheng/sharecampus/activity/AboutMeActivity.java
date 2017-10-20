@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.wangsheng.sharecampus.R;
+import com.wangsheng.sharecampus.dialog.ShareDialog;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -52,12 +53,16 @@ public class AboutMeActivity extends AppCompatActivity {
 
     }
 
-    @OnClick({R.id.toolbar_back, R.id.toolbar_share})
+    @OnClick({R.id.toolbar_back, R.id.toolbar_share,R.id.toolbar_back})
     public void toolbarClicked(View view) {
         switch (view.getId()) {
             case R.id.toolbar_back:
+                finish();
                 break;
             case R.id.toolbar_share:
+
+                ShareDialog dialog = new ShareDialog();
+                dialog.show(getSupportFragmentManager(), ShareDialog.TAG);
                 break;
         }
     }
@@ -67,4 +72,5 @@ public class AboutMeActivity extends AppCompatActivity {
         Intent intent = new Intent(this,EditInfoActivity.class);
         startActivity(intent);
     }
+
 }
