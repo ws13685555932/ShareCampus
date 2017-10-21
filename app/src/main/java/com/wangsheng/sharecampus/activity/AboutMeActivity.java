@@ -53,7 +53,7 @@ public class AboutMeActivity extends AppCompatActivity {
 
     }
 
-    @OnClick({R.id.toolbar_back, R.id.toolbar_share,R.id.toolbar_back})
+    @OnClick({R.id.toolbar_back, R.id.toolbar_share})
     public void toolbarClicked(View view) {
         switch (view.getId()) {
             case R.id.toolbar_back:

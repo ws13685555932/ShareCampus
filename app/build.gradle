@@ -30,9 +30,11 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile files('lib/open_sdk_r5886_lite.jar')
+
+
+    compile files('D:/Desktop/app/ShareCampus2/lib/open_sdk_r5886_lite.jar')
     // https://github.com/WuXiaolong/PullLoadMoreRecyclerView 自带下拉刷新个上拉加载的recyclerview
     //https://github.com/crazyandcoder/citypicker城市选择器
-    compile files('D:/Desktop/app/ShareCampus2/lib/open_sdk_r5886_lite.jar')
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support:design:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'

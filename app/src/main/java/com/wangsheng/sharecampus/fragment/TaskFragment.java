@@ -1,5 +1,6 @@
 package com.wangsheng.sharecampus.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -10,9 +11,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.wangsheng.sharecampus.R;
 import com.wangsheng.sharecampus.activity.MainActivity;
+import com.wangsheng.sharecampus.activity.SearchActivity;
 import com.wangsheng.sharecampus.adapter.CategoryPageAdapter;
 
 import java.util.ArrayList;
@@ -40,6 +43,8 @@ public class TaskFragment extends Fragment {
     TabLayout tabLayout;
     @BindView(R.id.view_pager)
     ViewPager viewPager;
+    @BindView(R.id.ll_search)
+    LinearLayout llsearch;
     Unbinder unbinder;
 
     @Override
@@ -82,5 +87,15 @@ public class TaskFragment extends Fragment {
     @OnClick(R.id.ciriv_user_icon)
     public void openDrawer(){
         MainActivity.drawer.openDrawer(Gravity.LEFT,true);
+    }
+    @OnClick({R.id.ll_search})
+    public void onclick(View v){
+        switch (v.getId()){
+            case R.id.ll_search:
+                SearchActivity.TYPE = "TASK";
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
+                startActivity(intent);
+                break;
+        }
     }
 }

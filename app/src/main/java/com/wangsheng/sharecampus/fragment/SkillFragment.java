@@ -1,5 +1,6 @@
 package com.wangsheng.sharecampus.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,10 +11,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.wangsheng.sharecampus.R;
 import com.wangsheng.sharecampus.activity.MainActivity;
+import com.wangsheng.sharecampus.activity.SearchActivity;
 import com.wangsheng.sharecampus.bean.SkillBean;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
@@ -39,7 +42,10 @@ public class SkillFragment extends Fragment {
     BGABanner bannerAd;
     @BindView(R.id.recycler_catogory)
     RecyclerView recyclerCatogory;
-    @BindView(R.id.ciriv_user_icon)CircleImageView icon;
+    @BindView(R.id.ciriv_user_icon)
+    CircleImageView icon;
+    @BindView(R.id.ll_search)
+    LinearLayout llsearch;
     Unbinder unbinder;
 
     private LinearLayoutManager mLayoutManager;
@@ -174,5 +180,15 @@ public class SkillFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+    }
+    @OnClick({R.id.ll_search})
+    public void onclick(View v){
+        switch (v.getId()){
+            case R.id.ll_search:
+                SearchActivity.TYPE = "SKILL";
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
+                startActivity(intent);
+                break;
+        }
     }
 }
