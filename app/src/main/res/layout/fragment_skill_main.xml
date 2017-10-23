@@ -1,16 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_scrollFlags="scroll|enterAlways|snap">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ciriv_user_icon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="left"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/kangna"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="1dp" />
+
+            <ImageView
+                android:id="@+id/iv_location"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_toolbar_location" />
+
+            <LinearLayout
+                android:id="@+id/ll_search"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/bg_tv_search"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:src="@drawable/ic_search" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="18dp"
+                    android:background="#ffffff"
+                    android:text="搜索大V姓名"
+                    android:gravity="center_vertical"
+                    android:textColor="#4d4d4d"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.Toolbar>
+        <android.support.v7.widget.Toolbar
+            android:visibility="gone"
+            android:id="@+id/toolbar_search"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:background="@color/colorPrimary"
@@ -65,31 +122,9 @@
 
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:orientation="vertical">
-       <TextView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="限定标签搜索更准确哦"
-           android:gravity="center"
-           android:textSize="20dp"
-           android:layout_marginTop="50dp"/>
-       <GridView
-           android:id="@+id/grid_label"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:numColumns="3"
-           android:layout_marginTop="20dp"
-           android:layout_marginRight="50dp"
-           android:layout_marginLeft="50dp"
-           android:horizontalSpacing="10dp"
-           android:verticalSpacing="10dp"
-           android:columnWidth="80dp">
-
-       </GridView>
-   </LinearLayout>
-
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frame_skill"/>
 
 </LinearLayout>

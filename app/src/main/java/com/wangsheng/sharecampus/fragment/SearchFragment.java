@@ -1,16 +1,13 @@
-package com.wangsheng.sharecampus.activity;
+package com.wangsheng.sharecampus.fragment;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.EditText;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.wangsheng.sharecampus.R;
@@ -20,26 +17,22 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
+import butterknife.Unbinder;
 
-public class SearchActivity extends AppCompatActivity {
-    @BindView(R.id.iv_cancel)
-    TextView ivcancel;
-    @BindView(R.id.image_search)
-    ImageView imagesearch;
-    @BindView(R.id.edit_search)
-    EditText editsearch;
-    @BindView(R.id.image_cancel)
-    ImageView imagecancel;
+public class SearchFragment extends Fragment {
+
     @BindView(R.id.grid_label)
     GridView gridlabel;
     public static String TYPE = "SKILL";
     List<String> labelBean = new ArrayList<String>();
+    Unbinder unbinder;
+
+
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
-        ButterKnife.bind(this);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_search, container, false);
+        unbinder = ButterKnife.bind(this, view);
         if(TYPE.equals("SKILL")){
             setSkillView();
         }
@@ -69,7 +62,7 @@ public class SearchActivity extends AppCompatActivity {
                 if (convertView == null) {
                     viewHolder = new ViewHolder();
                     //获取item.xml文件
-                    convertView = LayoutInflater.from(SearchActivity.this).inflate(R.layout.item_grid_label, null);
+                    convertView = LayoutInflater.from(getActivity()).inflate(R.layout.item_grid_label, null);
                     //获取item中的控件
                     viewHolder.labeltitle = (TextView) convertView.findViewById(R.id.tv_label);
                     convertView.setTag(viewHolder);
@@ -80,26 +73,10 @@ public class SearchActivity extends AppCompatActivity {
                 return convertView;
             }
         });
-        editsearch.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                imagecancel.setVisibility(View.VISIBLE);
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
-        imagecancel.setVisibility(View.GONE);
+        return view;
     }
     public void setSkillView(){
-        editsearch.setHint("搜索大V姓名");
         labelBean.add("考研");
         labelBean.add("保研");
         labelBean.add("工作");
@@ -118,7 +95,6 @@ public class SearchActivity extends AppCompatActivity {
         labelBean.add("跨国公益");
     }
     public void setTaskView(){
-        editsearch.setHint("搜索任务关键词");
         labelBean.add("学习提问");
         labelBean.add("生活提问");
         labelBean.add("代取代购");
@@ -132,17 +108,5 @@ public class SearchActivity extends AppCompatActivity {
         labelBean.add("修图海报");
         labelBean.add("兼职同行");
 
-    }
-    @OnClick({R.id.image_cancel,R.id.iv_cancel})
-    public void onClick(View v){
-        switch (v.getId()){
-            case R.id.image_cancel:
-                editsearch.setText("");
-                imagecancel.setVisibility(View.GONE);
-                break;
-            case R.id.iv_cancel:
-                finish();
-                break;
-        }
     }
 }

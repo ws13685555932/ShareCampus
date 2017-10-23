@@ -18,8 +18,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.wangsheng.sharecampus.R;
-import com.wangsheng.sharecampus.fragment.SkillFragment;
-import com.wangsheng.sharecampus.fragment.TaskFragment;
+import com.wangsheng.sharecampus.fragment.SkillMainFragment;
+import com.wangsheng.sharecampus.fragment.TaskMainFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -65,8 +65,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        skill = new SkillFragment();
-        task = new TaskFragment();
+        skill = new SkillMainFragment();
+        task = new TaskMainFragment();
 
         addFragment(R.id.content_layout, skill);
         addFragment(R.id.content_layout, task);

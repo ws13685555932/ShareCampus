@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="限定标签搜索更准确哦"
+           android:gravity="center"
+           android:textSize="20dp"
+           android:layout_marginTop="50dp"/>
+       <GridView
+           android:id="@+id/grid_label"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:fastScrollEnabled="false"
+           android:scrollbars="none"
+           android:numColumns="3"
+           android:layout_marginTop="20dp"
+           android:layout_marginRight="50dp"
+           android:layout_marginLeft="50dp"
+           android:horizontalSpacing="10dp"
+           android:verticalSpacing="10dp"
+           android:columnWidth="80dp">
+
+       </GridView>
+   </LinearLayout>
+
+
+</LinearLayout>

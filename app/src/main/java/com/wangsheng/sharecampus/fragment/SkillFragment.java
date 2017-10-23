@@ -1,22 +1,17 @@
 package com.wangsheng.sharecampus.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.wangsheng.sharecampus.R;
-import com.wangsheng.sharecampus.activity.MainActivity;
-import com.wangsheng.sharecampus.activity.SearchActivity;
 import com.wangsheng.sharecampus.bean.SkillBean;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
@@ -26,11 +21,9 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import butterknife.Unbinder;
 import cn.bingoogolapple.bgabanner.BGABanner;
 import cn.bingoogolapple.bgabanner.BGABannerUtil;
-import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by wangsheng
@@ -42,10 +35,7 @@ public class SkillFragment extends Fragment {
     BGABanner bannerAd;
     @BindView(R.id.recycler_catogory)
     RecyclerView recyclerCatogory;
-    @BindView(R.id.ciriv_user_icon)
-    CircleImageView icon;
-    @BindView(R.id.ll_search)
-    LinearLayout llsearch;
+
     Unbinder unbinder;
 
     private LinearLayoutManager mLayoutManager;
@@ -172,23 +162,27 @@ public class SkillFragment extends Fragment {
         return view;
 
     }
-    @OnClick(R.id.ciriv_user_icon)
-    public void openDrawer(){
-        MainActivity.drawer.openDrawer(Gravity.LEFT,true);
-    }
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
-    }
-    @OnClick({R.id.ll_search})
-    public void onclick(View v){
-        switch (v.getId()){
-            case R.id.ll_search:
-                SearchActivity.TYPE = "SKILL";
-                Intent intent = new Intent(getActivity(), SearchActivity.class);
-                startActivity(intent);
-                break;
-        }
-    }
+//    @OnClick(R.id.ciriv_user_icon)
+//    public void openDrawer(){
+//        MainActivity.drawer.openDrawer(Gravity.LEFT,true);
+//    }
+//    @Override
+//    public void onDestroyView() {
+//        super.onDestroyView();
+//        unbinder.unbind();
+//    }
+//    @OnClick({R.id.ll_search,R.id.iv_location})
+//    public void onclick(View v){
+//        switch (v.getId()){
+//            case R.id.ll_search:
+//                SearchFragment.TYPE = "SKILL";
+//                Intent intent = new Intent(getActivity(), SearchFragment.class);
+//                startActivity(intent);
+//                break;
+//            case R.id.iv_location:
+//                Intent location = new Intent(getActivity(), LocationActivity.class);
+//                startActivity(location);
+//                break;
+//        }
+//    }
 }

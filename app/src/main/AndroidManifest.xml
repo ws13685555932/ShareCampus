@@ -33,7 +33,6 @@
             android:exported="true" />
         <activity android:name=".activity.TaskAcceptActivity" />
         <activity android:name=".activity.MessageActivity" />
-        <activity android:name=".activity.SearchActivity" />
         <activity android:name=".activity.LocationActivity"></activity>
     </application>
 
