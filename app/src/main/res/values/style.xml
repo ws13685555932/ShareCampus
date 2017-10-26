@@ -28,7 +28,7 @@
     <style name="AboutMeTextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:textColor">@color/white_bottom</item>
         <item name="android:textSize">14sp</item>
         <item name="android:padding">4dp</item>
         <item name="android:layout_marginLeft">14dp</item>
@@ -48,7 +48,7 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:textColor">@color/white_bottom</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:layout_alignParentRight">true</item>
         <item name="android:padding">16dp</item>
@@ -84,11 +84,11 @@
 
 
 
-        <item name="colorPrimary">@color/brown_primary</item>
-        <item name="colorPrimaryDark">@color/brown_primary</item>
+        <item name="colorPrimary">@color/black_primary</item>
+        <item name="colorPrimaryDark">@color/black_primary</item>
         <item name="toolbar">@style/Toolbar.MyTheme</item>
         <item name="album.title.color">@color/white</item>
-        <item name="capture.color">@color/brown_primary</item>
+        <item name="capture.color">@color/black_primary</item>
 
 
     </style>

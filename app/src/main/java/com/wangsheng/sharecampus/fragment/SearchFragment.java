@@ -6,11 +6,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.TextView;
 
 import com.wangsheng.sharecampus.R;
+import com.zhy.view.flowlayout.FlowLayout;
+import com.zhy.view.flowlayout.TagAdapter;
+import com.zhy.view.flowlayout.TagFlowLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +22,8 @@ import butterknife.Unbinder;
 
 public class SearchFragment extends Fragment {
 
-    @BindView(R.id.grid_label)
-    GridView gridlabel;
+    @BindView(R.id.tfl_labels)
+    TagFlowLayout tflLabels;
     public static String TYPE = "SKILL";
     List<String> labelBean = new ArrayList<String>();
     Unbinder unbinder;
@@ -37,40 +38,14 @@ public class SearchFragment extends Fragment {
             setSkillView();
         }
         else setTaskView();
-        gridlabel.setAdapter(new BaseAdapter() {
-            @Override
-            public int getCount() {
-                return labelBean.size();
-            }
 
+        tflLabels.setAdapter(new TagAdapter<String>(labelBean) {
             @Override
-            public Object getItem(int i) {
-                return i;
-            }
-
-            @Override
-            public long getItemId(int i) {
-                return i;
-            }
-            class ViewHolder{
-                TextView labeltitle;
-            }
-            @Override
-            public View getView(int i, View convertView, ViewGroup viewGroup) {
-                ViewHolder viewHolder;
-                //不是第一个item的话就重写item
-                if (convertView == null) {
-                    viewHolder = new ViewHolder();
-                    //获取item.xml文件
-                    convertView = LayoutInflater.from(getActivity()).inflate(R.layout.item_grid_label, null);
-                    //获取item中的控件
-                    viewHolder.labeltitle = (TextView) convertView.findViewById(R.id.tv_label);
-                    convertView.setTag(viewHolder);
-                } else {
-                    viewHolder = (ViewHolder) convertView.getTag();
-                }
-                viewHolder.labeltitle.setText(labelBean.get(i));
-                return convertView;
+            public View getView(FlowLayout parent, int position, String label) {
+                TextView view = (TextView) LayoutInflater.from(getActivity())
+                        .inflate(R.layout.layout_label, tflLabels, false);
+                view.setText(label);
+                return view;
             }
         });
 

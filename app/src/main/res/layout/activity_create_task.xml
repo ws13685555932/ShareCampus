@@ -60,7 +60,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:text="标题"
-                    android:textColor="@color/dark_gray"
+                    android:textColor="@color/white_bottom"
                     android:textSize="16sp" />
 
                 <EditText
@@ -85,16 +85,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:text="标签"
-                    android:textColor="@color/dark_gray"
+                    android:textColor="@color/white_bottom"
                     android:textSize="16sp" />
 
                 <com.zhy.view.flowlayout.TagFlowLayout
                     android:id="@+id/tfl_labels"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:max_select="-1">
-
-                </com.zhy.view.flowlayout.TagFlowLayout>
+                    app:max_select="-1"/>
 
             </LinearLayout>
 
@@ -109,7 +107,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:text="选项（点击图标设置）"
-                    android:textColor="@color/dark_gray"
+                    android:textColor="@color/white_bottom"
                     android:textSize="16sp" />
 
                 <LinearLayout
@@ -120,7 +118,7 @@
                     <com.wangsheng.sharecampus.view.IconTextView
                         android:id="@+id/tv_choose_price"
                         android:layout_width="80dp"
-                        android:drawableTint="@color/brown_primary"
+                        android:drawableTint="@color/blue_light"
                         android:layout_height="30dp"
                         android:drawableLeft="@drawable/task_price"
                         android:drawablePadding="4dp"
@@ -132,7 +130,7 @@
                     <com.wangsheng.sharecampus.view.IconTextView
                         android:layout_width="80dp"
                         android:layout_height="30dp"
-                        android:drawableTint="@color/brown_primary"
+                        android:drawableTint="@color/blue_light"
                         android:drawableLeft="@drawable/task_time_left"
                         android:drawablePadding="4dp"
                         android:gravity="center_vertical"
@@ -143,7 +141,7 @@
                     <com.wangsheng.sharecampus.view.IconTextView
                         android:layout_width="80dp"
                         android:layout_height="30dp"
-                        android:drawableTint="@color/brown_primary"
+                        android:drawableTint="@color/blue_light"
                         android:drawableLeft="@drawable/task_person_limit"
                         android:drawablePadding="4dp"
                         android:gravity="center_vertical"
@@ -166,7 +164,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:text="详细描述"
-                    android:textColor="@color/dark_gray"
+                    android:textColor="@color/white_bottom"
                     android:textSize="16sp" />
 
                 <LinearLayout
@@ -209,19 +207,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:text="位置"
-                    android:textColor="@color/dark_gray"
+                    android:textColor="@color/white_bottom"
                     android:textSize="16sp" />
 
                 <com.wangsheng.sharecampus.view.IconTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:drawableTint="@color/brown_primary"
+                    android:drawableTint="@color/blue_light"
                     android:drawableLeft="@drawable/ic_location"
                     android:drawablePadding="4dp"
                     android:gravity="center_vertical"
                     android:text="获取定位"
-                    android:textColor="@color/brown_primary"
+                    android:textColor="@color/black_primary"
                     android:textSize="14sp"
                     app:iconHeight="25dp"
                     app:iconWidth="25dp" />
@@ -238,7 +236,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:text="备注（仅接受任务的人可见）"
-                    android:textColor="@color/dark_gray"
+                    android:textColor="@color/white_bottom"
                     android:textSize="16sp" />
 
                 <EditText

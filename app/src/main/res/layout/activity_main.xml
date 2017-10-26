@@ -5,7 +5,7 @@
     android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/brown_primary"
+    android:background="@color/colorPrimary"
     tools:ignore="MissingPrefix"
     tools:context="com.wangsheng.sharecampus.activity.MainActivity">
 
@@ -42,10 +42,8 @@
                     android:id="@+id/bottom_nav"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/bottom_bgcolor"
-                    app:menu="@menu/activity_main_bottom">
-
-                </android.support.design.widget.BottomNavigationView>
+                    android:background="@color/black_primary"
+                    app:menu="@menu/activity_main_bottom"/>
 
 
             </LinearLayout>

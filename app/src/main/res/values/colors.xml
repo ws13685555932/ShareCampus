@@ -6,8 +6,8 @@
 
     <!--<color name="colorPrimary">#1f96f2</color>-->
 
-    <color name="colorPrimary">#9a667b</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#232427</color>
+    <color name="colorPrimaryDark">#232427</color>
     <color name="colorAccent">#9b9b9b</color>
 
     <!--纯白色-->
@@ -16,20 +16,22 @@
     <color name="bottom_bgcolor">#fdfdfd</color>
     <!--app主页内容背景颜色-->
     <color name="background">#f4f4f4</color>
+    <!--底边栏选中浅蓝色-->
+    <color name="blue_light">#2EB8C2</color>
 
     <!--任务标题颜色-->
     <color name="dark_black">#1f1f1f</color>
-    <!--底边栏未选中图标颜色-->
-    <color name="dark_gray">#9b9b9b</color>
+    <!--通用字体色-->
+    <color name="white_bottom">#232427</color>
     <!--搜索栏背景颜色-->
     <color name="light_gray">#eeeeee</color>
 
-    <!--棕色主题色-->
-    <color name="brown_primary">#9a667b</color>
+    <!--黑主题色-->
+    <color name="black_primary">#232427</color>
     <!--棕色深色主题色-->
-    <color name="dark_brown">#89586B</color>
+    <!--<color name="dark_brown">#89586B</color>-->
     <!--棕色主题配套浅色，tabLayout未选中tab颜色-->
-    <color name="brown_light">#C394B5</color>
+    <color name="white_light">#ffffff</color>
     <!--一个小竖线的颜色-->
     <color name="gray_line">#737373</color>
 

@@ -103,7 +103,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="@color/brown_primary"
+                android:backgroundTint="@color/blue_light"
                 android:background="@drawable/task_communicate" />
 
             <ImageView
@@ -113,7 +113,7 @@
                 android:layout_centerVertical="true"
                 android:layout_margin="10dp"
                 android:layout_toRightOf="@id/iv_communicate"
-                android:backgroundTint="@color/brown_primary"
+                android:backgroundTint="@color/blue_light"
                 android:background="@drawable/task_unstar" />
 
             <ImageView
@@ -123,7 +123,7 @@
                 android:layout_centerVertical="true"
                 android:layout_margin="10dp"
                 android:layout_toRightOf="@id/iv_star"
-                android:backgroundTint="@color/brown_primary"
+                android:backgroundTint="@color/blue_light"
                 android:background="@drawable/task_share" />
 
 
@@ -132,7 +132,7 @@
                 android:layout_width="150dp"
                 android:layout_height="50dp"
                 android:layout_alignParentRight="true"
-                android:background="@color/brown_primary"
+                android:background="@color/black_primary"
                 android:layout_below="@+id/divider"
                 android:text="接受任务"
                 android:textColor="@color/white" />
@@ -170,7 +170,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_margin="4dp"
-                    android:src="@drawable/kangna" />
+                    android:src="@drawable/image_head5" />
 
                 <TextView
                     android:id="@+id/task_user_name"
@@ -197,9 +197,9 @@
                         app:iconHeight="18dp"
                         android:drawablePadding="4dp"
                         android:drawableLeft="@drawable/ic_integrity"
-                        android:drawableTint="@color/brown_primary"
+                        android:drawableTint="@color/blue_light"
                         android:text="95"
-                        android:textColor="@color/brown_primary"
+                        android:textColor="@color/black_primary"
                         android:textSize="16sp" />
                 </LinearLayout>
 
@@ -236,7 +236,7 @@
                         app:iconHeight="18dp"
                         android:gravity="center_vertical"
                         android:drawablePadding="4dp"
-                        android:drawableTint="@color/brown_primary"
+                        android:drawableTint="@color/blue_light"
                         android:drawableLeft="@drawable/task_price"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -258,7 +258,7 @@
                         app:iconHeight="18dp"
                         android:gravity="center_vertical"
                         android:drawablePadding="4dp"
-                        android:drawableTint="@color/brown_primary"
+                        android:drawableTint="@color/blue_light"
                         android:drawableLeft="@drawable/task_time_left"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -279,7 +279,7 @@
                         app:iconHeight="20dp"
                         android:gravity="center_vertical"
                         android:drawablePadding="4dp"
-                        android:drawableTint="@color/brown_primary"
+                        android:drawableTint="@color/blue_light"
                         android:drawableLeft="@drawable/task_person_limit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -297,7 +297,7 @@
                     android:layout_marginRight="8dp"
                     android:layout_marginTop="16dp"
                     android:text="俊园一心楼下申通快递棚，今晚6点前要快递，送至我宿舍。具体信息接单后私聊。"
-                    android:textColor="@color/dark_gray"
+                    android:textColor="@color/white_bottom"
                     android:textSize="14sp" />
 
                 <GridView
@@ -315,7 +315,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:text="发布于2016年10月15日 23:22"
-                    android:textColor="@color/brown_primary"
+                    android:textColor="@color/black_primary"
                     android:textSize="12sp" />
 
 
@@ -347,7 +347,8 @@
                         android:id="@+id/image_task_reply"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@drawable/task_write"
+                        android:background="@drawable/task_write"
+                        android:backgroundTint="@color/blue_light"
                         android:layout_centerVertical="true"
                         android:layout_alignParentEnd="true" />
                 </RelativeLayout>

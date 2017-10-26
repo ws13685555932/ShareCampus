@@ -64,7 +64,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="8dp"
                     android:padding="8dp"
-                    android:src="@drawable/kangna" />
+                    android:src="@drawable/image_head5" />
 
                 <View style="@style/Divider" />
 
@@ -88,7 +88,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="16dp"
-                    android:background="@drawable/kangna"
+                    android:background="@drawable/image_head5"
                     android:padding="8dp" />
 
                 <View style="@style/Divider" />

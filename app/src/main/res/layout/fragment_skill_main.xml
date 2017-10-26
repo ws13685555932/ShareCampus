@@ -22,7 +22,7 @@
                 android:layout_height="35dp"
                 android:layout_gravity="left"
                 android:layout_marginRight="16dp"
-                android:src="@drawable/kangna"
+                android:src="@drawable/image_head5"
                 app:civ_border_color="@color/white"
                 app:civ_border_width="1dp" />
 
@@ -81,7 +81,7 @@
                 android:layout_gravity="right"
                 android:layout_marginRight="16dp"
                 android:text="取消"
-                android:textColor="@color/liji_c_blue"
+                android:textColor="@color/blue_light"
                 android:textSize="20dp" />
             <RelativeLayout
                 android:background="@drawable/bg_tv_search2"

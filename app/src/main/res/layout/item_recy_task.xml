@@ -27,7 +27,7 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginRight="3dp"
-                android:src="@drawable/kangna"
+                android:src="@drawable/image_head5"
                 app:civ_border_color="@color/white"
                 app:civ_border_width="1dp" />
 
@@ -38,7 +38,7 @@
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/civ_user_icon"
                 android:text="云小逸"
-                android:textColor="@color/dark_gray"
+                android:textColor="@color/white_bottom"
                 android:textSize="12sp" />
 
             <TextView
@@ -49,7 +49,7 @@
                 android:layout_centerVertical="true"
                 android:text="还剩2天"
                 android:textAlignment="center"
-                android:textColor="@color/brown_primary"
+                android:textColor="@color/black_primary"
                 android:textSize="12sp" />
         </RelativeLayout>
 
@@ -81,7 +81,7 @@
                 android:ellipsize="end"
                 android:maxLines="6"
                 android:text="俊园一心楼下申通快递棚，今晚6点前要快递，送至我宿舍。具体信息接单后私聊。"
-                android:textColor="@color/dark_gray"
+                android:textColor="@color/dark_black"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -97,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:text="2"
                 android:textStyle="bold"
-                android:textColor="@color/brown_primary"
+                android:textColor="@color/black_primary"
                 android:textSize="18sp"
                 android:layout_toEndOf="@+id/image_prive"/>
             <ImageView

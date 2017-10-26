@@ -105,10 +105,10 @@ public class TaskActivity extends AppCompatActivity{
         recyclerLeaveMessage.setFocusable(false);
 
         List<Integer> resIds = new ArrayList<>();
-        resIds.add(R.drawable.kangna);
-        resIds.add(R.drawable.kangna);
-        resIds.add(R.drawable.kangna);
-        resIds.add(R.drawable.kangna);
+        resIds.add(R.drawable.image_head5);
+        resIds.add(R.drawable.image_head5);
+        resIds.add(R.drawable.image_head5);
+        resIds.add(R.drawable.image_head5);
         gridPics.setAdapter(new com.zhy.adapter.abslistview.CommonAdapter<Integer>(this,R.layout.item_grid_picd,resIds) {
             @Override
             protected void convert(com.zhy.adapter.abslistview.ViewHolder viewHolder, Integer item, int position) {

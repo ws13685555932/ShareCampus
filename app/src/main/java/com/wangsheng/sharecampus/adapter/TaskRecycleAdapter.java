@@ -17,6 +17,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by windows8 on 2017/9/28.
@@ -58,6 +59,8 @@ public class TaskRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         TextView time;
         @BindView(R.id.task)
         LinearLayout task;
+        @BindView(R.id.civ_user_icon)
+        CircleImageView usericon;
 
         public MyViewHolder(View view) {
             super(view);
@@ -78,7 +81,7 @@ public class TaskRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
             return holder;
     }
-
+    int[] image = {R.drawable.image_head1,R.drawable.image_head2,R.drawable.image_head3,R.drawable.image_head4,R.drawable.image_head5};
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         ((MyViewHolder) holder).title.setText(mData.get(position).getTaskTitle());
@@ -86,6 +89,7 @@ public class TaskRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         ((MyViewHolder) holder).price.setText(mData.get(position).getTaskPrice()+"");
         ((MyViewHolder) holder).content.setText(mData.get(position).getTaskContent());
         ((MyViewHolder) holder).time.setText(mData.get(position).getCreateTime());
+        ((MyViewHolder) holder).usericon.setImageResource(image[position%5]);
         ((MyViewHolder) holder).task.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

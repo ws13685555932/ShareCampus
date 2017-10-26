@@ -18,7 +18,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="5dp"
-            android:src="@drawable/kangna" />
+            android:src="@drawable/image_head5" />
 
         <TextView
             android:id="@+id/iv_name"

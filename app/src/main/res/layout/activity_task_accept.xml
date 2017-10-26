@@ -57,7 +57,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
-                    android:textColor="@color/dark_gray"
+                    android:textColor="@color/white_bottom"
                     android:text="\@陌上疏影凉"
                     android:textAlignment="center"
                     android:maxLines="2"
@@ -79,7 +79,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
-                    android:textColor="@color/brown_primary"
+                    android:textColor="@color/black_primary"
                     android:text="￥2.00"
                     android:textStyle="bold"
                     android:textAlignment="center"
@@ -90,7 +90,7 @@
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/kangna"
+                android:src="@drawable/image_head5"
                 android:layout_margin="8dp"
                 android:layout_centerHorizontal="true"
                 />
@@ -119,7 +119,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:textColor="@color/dark_gray"
+                android:textColor="@color/white_bottom"
                 android:padding="4dp"
                 android:textAlignment="center"
                 android:text="任务编号:123424"/>
@@ -129,7 +129,7 @@
                 android:layout_height="wrap_content"
                 android:text="感谢您对校园江湖的信任，期待您再次光临"
                 android:textAlignment="center"
-                android:textColor="@color/dark_gray"
+                android:textColor="@color/white_bottom"
                 android:padding="8dp"
                 android:textSize="12sp"/>
 

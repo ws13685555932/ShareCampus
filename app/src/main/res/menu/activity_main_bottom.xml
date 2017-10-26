@@ -14,5 +14,5 @@
     <item
         android:icon="@drawable/selector_item_task"
         android:id="@+id/message"
-        android:title="悬赏任务"></item>
+        android:title="悬赏通缉"></item>
 </menu>

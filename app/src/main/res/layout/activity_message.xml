@@ -18,12 +18,12 @@
             app:layout_scrollFlags="scroll|enterAlways|snap">
 
             <ImageView
-                android:id="@+id/ciriv_user_icon"
-                android:layout_width="30dp"
+                android:id="@+id/message_back"
+                android:layout_width="20dp"
                 android:layout_height="30dp"
                 android:layout_gravity="left"
                 android:layout_marginRight="16dp"
-                android:src="@drawable/ic_back"
+                android:src="@drawable/ic_toolbar_back"
                 app:civ_border_color="@color/white"
                 app:civ_border_width="1dp" />
             <ImageView
@@ -79,7 +79,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="任务通知"
-                    android:textColor="@color/dark_gray" />
+                    android:textColor="@color/white_bottom" />
             </LinearLayout>
 
             <LinearLayout
@@ -101,7 +101,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="系统通知"
-                    android:textColor="@color/dark_gray" />
+                    android:textColor="@color/white_bottom" />
             </LinearLayout>
 
             <LinearLayout
@@ -121,7 +121,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="回复我的"
-                    android:textColor="@color/dark_gray" />
+                    android:textColor="@color/white_bottom" />
             </LinearLayout>
         </LinearLayout>
 

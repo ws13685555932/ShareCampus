@@ -1,6 +1,7 @@
 package com.wangsheng.sharecampus.activity;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -33,7 +34,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @BindView(R.id.nav_view)
     NavigationView navigationView;
 
-
     Fragment skill;
     Fragment task;
 
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(getResources().getColor(R.color.brown_primary));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.black_primary));
             getWindow().getDecorView().setSystemUiVisibility(
                     View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
         }
@@ -72,7 +72,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         addFragment(R.id.content_layout, task);
 
         hideFragment(task);
-//
+
+        int[][] states = new int[][]{
+                new int[]{-android.R.attr.state_checked},
+                new int[]{android.R.attr.state_checked}
+        };
+
+        int[] colors = new int[]{getResources().getColor(R.color.white),
+                getResources().getColor(R.color.blue_light)
+        };
+        ColorStateList csl = new ColorStateList(states, colors);
+        bottomNav.setItemTextColor(csl);
+        bottomNav.setItemIconTintList(csl);
         bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
