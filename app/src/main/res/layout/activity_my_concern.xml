@@ -4,7 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -21,24 +20,23 @@
                 android:id="@+id/iv_back"
                 android:layout_width="25dp"
                 android:layout_height="30dp"
-                android:layout_gravity="left"
                 android:layout_marginRight="16dp"
-                android:src="@drawable/ic_toolbar_back" />
+                android:layout_gravity="left"
+                android:src="@drawable/ic_toolbar_back"/>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:layout_marginRight="16dp"
-                android:text="我的收藏"
-                android:textColor="@color/white"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:text="我的关注"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
 
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/iv_recycle"
         android:layout_width="match_parent"

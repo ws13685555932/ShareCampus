@@ -54,8 +54,8 @@ public class TaskMainFragment extends Fragment {
     @BindView(R.id.toolbar_search)
     Toolbar searchbar;
     Unbinder unbinder;
-    Fragment taskFragment;
-    Fragment searchFragment;
+    TaskFragment taskFragment;
+    SearchFragment searchFragment;
     InputMethodManager imm;
 
 
@@ -72,7 +72,7 @@ public class TaskMainFragment extends Fragment {
     public void initView(){
         taskFragment = new TaskFragment();
         searchFragment = new SearchFragment();
-        SearchFragment.TYPE = "SKILL";
+        searchFragment.TYPE = "SKILL";
         addFragment(R.id.frame_task,taskFragment);
         addFragment(R.id.frame_task,searchFragment);
         hideFragment(searchFragment);

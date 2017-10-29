@@ -19,29 +19,41 @@
 
             <ImageView
                 android:id="@+id/iv_back"
-                android:layout_width="25dp"
+                android:layout_width="20dp"
                 android:layout_height="30dp"
                 android:layout_gravity="left"
                 android:layout_marginRight="16dp"
                 android:src="@drawable/ic_toolbar_back" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="16dp"
-                android:text="我的收藏"
-                android:textColor="@color/white"
+                android:layout_gravity="center"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:text="我接收的任务"/>
+
+
 
 
         </android.support.v7.widget.Toolbar>
 
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            app:tabIndicatorColor="@color/blue_light"
+            app:tabSelectedTextColor="@color/blue_light"
+            app:tabTextColor="@color/white_light" />
+
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/iv_recycle"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 </LinearLayout>

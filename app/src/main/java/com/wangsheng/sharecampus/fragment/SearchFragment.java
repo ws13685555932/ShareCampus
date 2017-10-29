@@ -24,7 +24,7 @@ public class SearchFragment extends Fragment {
 
     @BindView(R.id.tfl_labels)
     TagFlowLayout tflLabels;
-    public static String TYPE = "SKILL";
+    public String TYPE = "SKILL";
     List<String> labelBean = new ArrayList<String>();
     Unbinder unbinder;
 

@@ -33,7 +33,13 @@
             android:exported="true" />
         <activity android:name=".activity.TaskAcceptActivity" />
         <activity android:name=".activity.MessageActivity" />
-        <activity android:name=".activity.LocationActivity"></activity>
+        <activity android:name=".activity.LocationActivity" />
+        <activity android:name=".activity.InviteActivity" />
+        <activity android:name=".activity.TaskInActivity" />
+        <activity android:name=".activity.TaskOutActivity" />
+        <activity android:name=".activity.MySincerityActivity" />
+        <activity android:name=".activity.SettingActivity" />
+        <activity android:name=".activity.MyConcernActivity"></activity>
     </application>
 
 </manifest>

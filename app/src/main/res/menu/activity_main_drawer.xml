@@ -3,19 +3,23 @@
 
     <group android:id="@+id/group1">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_invite"
+            android:icon="@drawable/nav_invite"
+            android:title="发出的邀请"/>
+        <item
+            android:id="@+id/nav_taskout"
             android:icon="@drawable/nav_send"
             android:title="发出的任务" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_taskin"
             android:icon="@drawable/nav_recieve"
             android:title="接受的任务" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_wallet"
             android:icon="@drawable/nav_wallet"
             android:title="我的钱包" />
         <item
-            android:id="@+id/nav_share"
+            android:id="@+id/nav_sincerity"
             android:icon="@drawable/nav_integrity"
             android:title="诚信值" />
     </group>
@@ -25,15 +29,15 @@
             android:icon="@drawable/bottom_item_message"
             android:title="我的消息" />
         <item
-            android:id="@+id/nav_eye"
+            android:id="@+id/nav_concern"
             android:icon="@drawable/nav_eye"
             android:title="我的关注" />
         <item
-            android:id="@+id/nav_send"
+            android:id="@+id/nav_collection"
             android:icon="@drawable/nav_star"
             android:title="我的收藏" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_setting"
             android:icon="@drawable/nav_setting"
             android:title="设置" />
     </group>

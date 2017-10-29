@@ -75,7 +75,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="50dp"
                 android:textSize="16sp"
-                android:text="我的余额"/>
+                android:text="我的余额(金)"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -92,42 +92,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="13dp"
                     android:textColor="@color/black_primary"
-                    android:textSize="30dp"
+                    android:textSize="60dp"
                     android:text="44.6"/>
             </LinearLayout>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_marginLeft="50dp"
-                android:textSize="16sp"
-                android:text="我的信用"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="10dp"/>
-                <TextView
-                    android:id="@+id/iv_credit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="13dp"
-                    android:textSize="30dp"
-                    android:textColor="@color/black_primary"
-                    android:text="666"/>
-            </LinearLayout>
-        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout

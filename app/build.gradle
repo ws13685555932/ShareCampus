@@ -33,8 +33,6 @@ dependencies {
 
 
     compile files('D:/Desktop/app/ShareCampus2/lib/open_sdk_r5886_lite.jar')
-    // https://github.com/WuXiaolong/PullLoadMoreRecyclerView 自带下拉刷新个上拉加载的recyclerview
-    //https://github.com/crazyandcoder/citypicker城市选择器
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support:design:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
@@ -57,4 +55,5 @@ dependencies {
     compile 'liji.library.dev:citypickerview:2.0.1'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    compile 'com.ruffian.library:RTextView:1.0.1'
 }

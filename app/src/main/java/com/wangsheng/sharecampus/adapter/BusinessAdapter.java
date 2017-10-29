@@ -25,7 +25,7 @@ public class BusinessAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.item_recy_wallet_business, parent,
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_recy_wallet, parent,
                 false);
         BusinessHolder businessHolder = new BusinessHolder(view);
         view.setOnClickListener(this);

@@ -54,8 +54,8 @@ public class SkillMainFragment extends Fragment {
     @BindView(R.id.image_cancel)
     ImageView imagecancel;
     Unbinder unbinder;
-    Fragment skillFragment;
-    Fragment searchFragment;
+    SkillFragment skillFragment;
+    SearchFragment searchFragment;
     InputMethodManager imm;
 
 
@@ -72,7 +72,7 @@ public class SkillMainFragment extends Fragment {
     public void initView(){
         skillFragment = new SkillFragment();
         searchFragment = new SearchFragment();
-        SearchFragment.TYPE = "SKILL";
+        searchFragment.TYPE = "SKILL";
         addFragment(R.id.frame_skill,skillFragment);
         addFragment(R.id.frame_skill,searchFragment);
         hideFragment(searchFragment);

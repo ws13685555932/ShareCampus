@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.wangsheng.sharecampus.R;
-import com.wangsheng.sharecampus.dialog.ChooseLimitDialog;
+import com.wangsheng.sharecampus.dialog.ChoosePriceDialog;
 import com.wangsheng.sharecampus.view.IconTextView;
 import com.zhihu.matisse.Matisse;
 import com.zhihu.matisse.MimeType;
@@ -102,8 +102,8 @@ public class CreateTaskActivity extends AppCompatActivity{
 
     @OnClick(R.id.tv_choose_price)
     public void onViewClicked() {
-        ChooseLimitDialog dialog = new ChooseLimitDialog();
-        dialog.show(getFragmentManager(), ChooseLimitDialog.TAG);
+        ChoosePriceDialog dialog = new ChoosePriceDialog();
+        dialog.show(getFragmentManager(), ChoosePriceDialog.TAG);
     }
 
     @OnClick(R.id.image_back)

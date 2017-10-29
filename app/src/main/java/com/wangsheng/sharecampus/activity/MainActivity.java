@@ -145,17 +145,41 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected( MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.nav_slideshow:
+            case R.id.nav_invite:
+                Intent invite = new Intent(MainActivity.this, InviteActivity.class);
+                startActivity(invite);
+                break;
+            case R.id.nav_taskout:
+                Intent taskout = new Intent(MainActivity.this, TaskOutActivity.class);
+                startActivity(taskout);
+                break;
+            case R.id.nav_taskin:
+                Intent taskin = new Intent(MainActivity.this, TaskInActivity.class);
+                startActivity(taskin);
+                break;
+            case R.id.nav_wallet:
                 Intent wallet = new Intent(MainActivity.this, MyWalletActivity.class);
                 startActivity(wallet);
                 break;
-            case R.id.nav_send:
-                Intent collection = new Intent(MainActivity.this, MyCollectionActivity.class);
-                startActivity(collection);
+            case R.id.nav_sincerity:
+                Intent sincerity = new Intent(MainActivity.this, MySincerityActivity.class);
+                startActivity(sincerity);
                 break;
             case R.id.nav_message:
                 Intent message = new Intent(MainActivity.this, MessageActivity.class);
                 startActivity(message);
+                break;
+            case R.id.nav_concern:
+                Intent concern = new Intent(MainActivity.this, MyConcernActivity.class);
+                startActivity(concern);
+                break;
+            case R.id.nav_collection:
+                Intent collection = new Intent(MainActivity.this, MyCollectionActivity.class);
+                startActivity(collection);
+                break;
+            case R.id.nav_setting:
+                Intent setting = new Intent(MainActivity.this, SettingActivity.class);
+                startActivity(setting);
                 break;
         }
 
