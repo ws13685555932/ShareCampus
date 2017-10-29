@@ -21,27 +21,31 @@ import butterknife.OnClick;
  * on 2017/10/2.
  */
 
-public class ChoosePriceDialog extends DialogFragment {
-
-    public static final String TAG = "ChoosePriceDialog";
-    @BindView(R.id.chooseprice_cancel)
+public class ChooseTimeDialog extends DialogFragment {
+    public static final String TAG = "ChooseTimeDialog";
+    @BindView(R.id.choosetime_cancel)
     Button cancel;
-    @BindView(R.id.chooseprice_true)
+    @BindView(R.id.choosetime_date)
+    EditText date;
+    @BindView(R.id.choosetime_hour)
+    EditText hour;
+    @BindView(R.id.choosetime_month)
+    EditText month;
+    @BindView(R.id.choosetime_true)
     Button confirm;
-    @BindView(R.id.chooseprice_edit)
-    EditText price;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         getDialog().requestWindowFeature(Window.FEATURE_NO_TITLE);
-        View view = inflater.inflate(R.layout.dialog_choose_price,container);
+        View view = inflater.inflate(R.layout.dialog_choose_time,container);
         ButterKnife.bind(this,view);
         return view;
+
     }
     private ClickListener mClickListener;
 
     public interface ClickListener {
-        void onChoosePrice(int price);
+        void onChooseTime(int month,int date,int hour);
     }
     public void setmClickListener(ClickListener l){
         mClickListener = l;
@@ -50,16 +54,18 @@ public class ChoosePriceDialog extends DialogFragment {
     public void setClickListener(ClickListener mClickListener) {
         this.mClickListener = mClickListener;
     }
-    @OnClick({R.id.chooseprice_cancel,R.id.chooseprice_true})
+    @OnClick({R.id.choosetime_cancel,R.id.choosetime_true})
     public void onClick(View v){
         switch (v.getId()){
-            case R.id.chooseprice_cancel:
+            case R.id.choosetime_cancel:
                 dismiss();
                 break;
-            case R.id.chooseprice_true:
-                int pricenum = Integer.parseInt(price.getText().toString());
-                if(pricenum!= 0 && mClickListener!=null){
-                    mClickListener.onChoosePrice(pricenum);
+            case R.id.choosetime_true:
+                int monthnum = Integer.parseInt(month.getText().toString());
+                int datenum = Integer.parseInt(date.getText().toString());
+                int hournum = Integer.parseInt(hour.getText().toString());
+                if((monthnum!=0||datenum!=0||hournum!=0)&&mClickListener!=null){
+                    mClickListener.onChooseTime(monthnum,datenum,hournum);
                     dismiss();
                 }
                 break;

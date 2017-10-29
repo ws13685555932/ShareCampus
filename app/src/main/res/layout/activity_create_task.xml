@@ -117,10 +117,11 @@
 
                     <com.wangsheng.sharecampus.view.IconTextView
                         android:id="@+id/tv_choose_price"
-                        android:layout_width="80dp"
+                        android:layout_width="wrap_content"
                         android:drawableTint="@color/blue_light"
                         android:layout_height="30dp"
                         android:drawableLeft="@drawable/task_price"
+                        android:layout_marginRight="20dp"
                         android:drawablePadding="4dp"
                         android:gravity="center_vertical"
                         android:text="2金"
@@ -128,10 +129,13 @@
                         app:iconWidth="20dp" />
 
                     <com.wangsheng.sharecampus.view.IconTextView
-                        android:layout_width="80dp"
+
+                        android:id="@+id/tv_choose_time"
+                        android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:drawableTint="@color/blue_light"
                         android:drawableLeft="@drawable/task_time_left"
+                        android:layout_marginRight="20dp"
                         android:drawablePadding="4dp"
                         android:gravity="center_vertical"
                         android:text="5天"
@@ -139,7 +143,9 @@
                         app:iconWidth="20dp" />
 
                     <com.wangsheng.sharecampus.view.IconTextView
-                        android:layout_width="80dp"
+
+                        android:id="@+id/tv_choose_people"
+                        android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:drawableTint="@color/blue_light"
                         android:drawableLeft="@drawable/task_person_limit"

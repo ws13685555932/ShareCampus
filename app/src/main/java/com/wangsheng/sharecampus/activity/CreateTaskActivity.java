@@ -10,7 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.wangsheng.sharecampus.R;
+import com.wangsheng.sharecampus.dialog.ChooseLimitDialog;
 import com.wangsheng.sharecampus.dialog.ChoosePriceDialog;
+import com.wangsheng.sharecampus.dialog.ChooseTimeDialog;
 import com.wangsheng.sharecampus.view.IconTextView;
 import com.zhihu.matisse.Matisse;
 import com.zhihu.matisse.MimeType;
@@ -34,10 +36,14 @@ public class CreateTaskActivity extends AppCompatActivity{
     @BindView(R.id.tfl_labels)
     TagFlowLayout tflLabels;
     @BindView(R.id.tv_choose_price)
-    IconTextView tvChoosePrice;
+    IconTextView pricetext;
     @BindView(R.id.grid_add_pic)
     GridView gridAddPic;
     @BindView(R.id.image_back)ImageView back;
+    @BindView(R.id.tv_choose_people)
+    IconTextView peopletext;
+    @BindView(R.id.tv_choose_time)
+    IconTextView timetext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,6 +110,36 @@ public class CreateTaskActivity extends AppCompatActivity{
     public void onViewClicked() {
         ChoosePriceDialog dialog = new ChoosePriceDialog();
         dialog.show(getFragmentManager(), ChoosePriceDialog.TAG);
+        dialog.setmClickListener(new ChoosePriceDialog.ClickListener() {
+            @Override
+            public void onChoosePrice(int price) {
+                pricetext.setText(price+"金");
+            }
+        });
+    }
+    @OnClick(R.id.tv_choose_time)
+    public void Choosetime(){
+        ChooseTimeDialog dialog = new ChooseTimeDialog();
+        dialog.show(getFragmentManager(), ChooseTimeDialog.TAG);
+        dialog.setmClickListener(new ChooseTimeDialog.ClickListener() {
+
+            @Override
+            public void onChooseTime(int month, int date, int hour) {
+                timetext.setText((month*30+date)+"天"+hour+"小时");
+            }
+        });
+    }
+    @OnClick(R.id.tv_choose_people)
+    public  void Choosepeople(){
+        ChooseLimitDialog dialog = new ChooseLimitDialog();
+        dialog.show(getFragmentManager(), ChooseLimitDialog.TAG);
+        dialog.setmClickListener(new ChooseLimitDialog.ClickListener() {
+
+            @Override
+            public void onChooseLimit(int num) {
+                peopletext.setText(num+"人");
+            }
+        });
     }
 
     @OnClick(R.id.image_back)

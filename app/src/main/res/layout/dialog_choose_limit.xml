@@ -21,14 +21,26 @@
     <LinearLayout
         android:id="@+id/dialog_price"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <SeekBar
-            android:progress="10"
-            android:layout_width="match_parent"
+            android:id="@+id/chooselimit_seekbar"
+            android:progress="0"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="9"
             android:padding="8dp"
             android:textColor="@color/dark_black"/>
+        <TextView
+            android:id="@+id/chooselimit_num"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="20"
+            android:textColor="@color/black_primary"
+            android:textSize="20dp"/>
 
     </LinearLayout>
 
@@ -41,6 +53,7 @@
         android:layout_height="wrap_content">
 
         <Button
+            android:id="@+id/chooselimit_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/transparent"
@@ -50,6 +63,7 @@
             android:text="取消"/>
 
         <Button
+            android:id="@+id/chooselimit_true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/transparent"
