@@ -1,4 +1,4 @@
-package com.wangsheng.sharecampus.school;
+package com.wangsheng.sharecampus.view.school;
 
 public class SortModel {
 

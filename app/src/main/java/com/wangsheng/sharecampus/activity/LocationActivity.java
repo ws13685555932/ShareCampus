@@ -16,11 +16,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.wangsheng.sharecampus.R;
-import com.wangsheng.sharecampus.school.CharacterParser;
-import com.wangsheng.sharecampus.school.PinyinComparator;
-import com.wangsheng.sharecampus.school.SideBar;
-import com.wangsheng.sharecampus.school.SortAdapter;
-import com.wangsheng.sharecampus.school.SortModel;
+import com.wangsheng.sharecampus.view.school.CharacterParser;
+import com.wangsheng.sharecampus.view.school.PinyinComparator;
+import com.wangsheng.sharecampus.view.school.SideBar;
+import com.wangsheng.sharecampus.view.school.SortAdapter;
+import com.wangsheng.sharecampus.view.school.SortModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;

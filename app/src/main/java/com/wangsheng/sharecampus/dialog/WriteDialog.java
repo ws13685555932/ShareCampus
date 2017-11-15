@@ -97,6 +97,4 @@ public class WriteDialog extends DialogFragment {
     public void show(FragmentManager manager, String tag) {
         super.show(manager, tag);
     }
-
-
 }

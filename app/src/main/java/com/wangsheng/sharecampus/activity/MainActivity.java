@@ -17,10 +17,14 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.wangsheng.sharecampus.R;
+import com.wangsheng.sharecampus.dialog.LoginDialog;
+import com.wangsheng.sharecampus.dialog.PickSexDialog;
 import com.wangsheng.sharecampus.fragment.SkillMainFragment;
 import com.wangsheng.sharecampus.fragment.TaskMainFragment;
+import com.wangsheng.sharecampus.util.SharedUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -36,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     Fragment skill;
     Fragment task;
-
+    LinearLayout islogin,notlogin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,6 +116,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, AboutMeActivity.class);
                 startActivity(intent);
+            }
+        });
+        islogin = (LinearLayout)header.findViewById(R.id.drawer_islogin);
+        notlogin = (LinearLayout)header.findViewById(R.id.drawer_notlogin);
+        if(SharedUtil.getParam("islogin","").toString().equals("1")){
+            islogin.setVisibility(View.VISIBLE);
+            notlogin.setVisibility(View.GONE);
+        }else {
+            notlogin.setVisibility(View.VISIBLE);
+            islogin.setVisibility(View.GONE);
+        }
+        CircleImageView login = (CircleImageView) header.findViewById(R.id.drawer_login);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoginDialog dialog = new LoginDialog();
+                dialog.show(getSupportFragmentManager(), PickSexDialog.TAG);
             }
         });
     }

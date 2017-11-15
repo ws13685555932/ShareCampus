@@ -1,4 +1,4 @@
-package com.wangsheng.sharecampus.school;
+package com.wangsheng.sharecampus.view.school;
 
 import android.content.Context;
 import android.view.LayoutInflater;

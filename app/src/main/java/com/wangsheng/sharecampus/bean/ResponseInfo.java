@@ -9,7 +9,7 @@ public class ResponseInfo<T> {
     boolean success;
     String message;
     T data;
-    String code;
+    String statusCode;
 
     @Override
     public String toString() {
@@ -17,7 +17,7 @@ public class ResponseInfo<T> {
                 "success=" + success +
                 ", message='" + message + '\'' +
                 ", data=" + data +
-                ", code=" + code +
+                ", code=" + statusCode +
                 '}';
     }
 
@@ -45,11 +45,11 @@ public class ResponseInfo<T> {
         this.data = data;
     }
 
-    public String getCode() {
-        return code;
+    public String getStatusCode() {
+        return statusCode;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setStatusCode(String statusCode) {
+        this.statusCode = statusCode;
     }
 }

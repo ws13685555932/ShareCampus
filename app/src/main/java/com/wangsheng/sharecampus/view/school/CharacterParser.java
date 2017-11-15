@@ -1,4 +1,4 @@
-package com.wangsheng.sharecampus.school;
+package com.wangsheng.sharecampus.view.school;
 
 /**
  * Java汉字转换为拼音

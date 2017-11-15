@@ -6,5 +6,5 @@ package com.wangsheng.sharecampus.config;
  */
 
 public class HttpConfig {
-    public static final String BASE_URL = "";
+    public static final String BASE_URL = "http://118.89.142.148:8080/";
 }

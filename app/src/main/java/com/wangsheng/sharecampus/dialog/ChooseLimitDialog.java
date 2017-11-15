@@ -67,9 +67,6 @@ public class ChooseLimitDialog extends DialogFragment {
         mClickListener = l;
     }
 
-    public void setClickListener(ClickListener mClickListener) {
-        this.mClickListener = mClickListener;
-    }
     @OnClick({R.id.chooselimit_cancel,R.id.chooselimit_true})
     public void onClick(View v){
         switch (v.getId()){
