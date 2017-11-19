@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     Fragment skill;
     Fragment task;
-    LinearLayout islogin,notlogin;
+    public static LinearLayout islogin,notlogin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -120,13 +120,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
         islogin = (LinearLayout)header.findViewById(R.id.drawer_islogin);
         notlogin = (LinearLayout)header.findViewById(R.id.drawer_notlogin);
-        if(SharedUtil.getParam("islogin","").toString().equals("1")){
-            islogin.setVisibility(View.VISIBLE);
-            notlogin.setVisibility(View.GONE);
-        }else {
-            notlogin.setVisibility(View.VISIBLE);
-            islogin.setVisibility(View.GONE);
-        }
         CircleImageView login = (CircleImageView) header.findViewById(R.id.drawer_login);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,7 +128,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 dialog.show(getSupportFragmentManager(), PickSexDialog.TAG);
             }
         });
+        refreshLogin();
     }
+    public void refreshLogin(){
+        if(SharedUtil.getParam("islogin","").toString().equals("1")){
+            islogin.setVisibility(View.VISIBLE);
+            notlogin.setVisibility(View.GONE);
+        }else {
+            notlogin.setVisibility(View.VISIBLE);
+            islogin.setVisibility(View.GONE);
+        }
+    }
+    public MainActivity() {
+        mainActivity = this;
+    }
+
+    public static MainActivity getMainActivity() {
+        return mainActivity;
+    }
+
+    private static MainActivity mainActivity;
 
     private void showFragment(Fragment fragment) {
         FragmentManager manager = getSupportFragmentManager();

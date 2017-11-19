@@ -4,4 +4,8 @@
         <attr name="iconWidth" format="dimension"/>
         <attr name="iconHeight" format="dimension"/>
     </declare-styleable>
+    <declare-styleable name="CriconerImageView">
+        <attr name="imageCorner" format="integer"/>
+        <attr name="imageBrightness" format="integer"/>
+    </declare-styleable>
 </resources>

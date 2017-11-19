@@ -23,6 +23,11 @@ android {
         }
     }
 }
+repositories {
+    flatDir {
+        dirs 'lib' //就是你放aar的目录地址
+    }
+}
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
@@ -30,7 +35,10 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile files('lib/open_sdk_r5886_lite.jar')
-
+    compile name: 'SMSSDK-3.0.0', ext: 'aar'
+    compile name: 'SMSSDKGUI-3.0.0', ext: 'aar'
+    compile files('lib/MobCommons-2017.0607.1736.jar')
+    compile files('lib/MobTools-2017.0607.1736.jar')
 
     compile files('D:/Desktop/app/ShareCampus2/lib/open_sdk_r5886_lite.jar')
     compile 'com.android.support:appcompat-v7:26.+'
@@ -53,7 +61,7 @@ dependencies {
     compile 'com.zhihu.android:matisse:0.4.3'
     compile 'com.wuxiaolong.pullloadmorerecyclerview:library:1.1.2'
     compile 'liji.library.dev:citypickerview:2.0.1'
+    compile 'com.ruffian.library:RTextView:1.0.1'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    compile 'com.ruffian.library:RTextView:1.0.1'
 }

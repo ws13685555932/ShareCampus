@@ -1,14 +1,15 @@
 package com.wangsheng.sharecampus;
 
-import android.app.Application;
 import android.content.Context;
+
+import com.mob.MobApplication;
 
 /**
  * Created by wangsheng
  * on 2017/10/2.
  */
 
-public class MyApplication extends Application {
+public class MyApplication extends MobApplication {
     private static Context context;
 
     @Override

@@ -1,6 +1,7 @@
 package com.wangsheng.sharecampus.view;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.ColorMatrix;
@@ -15,6 +16,8 @@ import android.graphics.drawable.Drawable;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 
+import com.wangsheng.sharecampus.R;
+
 /**
  * Created by windows8 on 2017/11/15.
  */
@@ -22,6 +25,8 @@ import android.util.AttributeSet;
 public class CriconerImageView extends AppCompatImageView {
 
     private Paint paint;
+    private int brightness = 20;
+    private int corner = 100;
 
     public CriconerImageView(Context context) {
         this(context,null);
@@ -34,6 +39,10 @@ public class CriconerImageView extends AppCompatImageView {
     public CriconerImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         paint  = new Paint();
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.CriconerImageView);
+        brightness = ta.getInt(R.styleable.CriconerImageView_imageBrightness, 20);
+        corner = ta.getInt(R.styleable.CriconerImageView_imageCorner, 100);
+        ta.recycle();
     }
 
     /**
@@ -45,7 +54,7 @@ public class CriconerImageView extends AppCompatImageView {
         Drawable drawable = getDrawable();
         if (null != drawable) {
             Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
-            Bitmap b = getRoundBitmap(bitmap,100);
+            Bitmap b = getRoundBitmap(bitmap,corner);
             final Rect rectSrc = new Rect(0, 0, b.getWidth(), b.getHeight());
             final Rect rectDest = new Rect(0,0,getWidth(),getHeight());
             paint.reset();
@@ -74,7 +83,7 @@ public class CriconerImageView extends AppCompatImageView {
         paint.setAntiAlias(true);
         canvas.drawARGB(0, 0, 0, 0);
         paint.setColor(color);
-        int brightness = 20;
+        int brightness = this.brightness-127;
         ColorMatrix cMatrix = new ColorMatrix();
         cMatrix.set(new float[] { 1, 0, 0, 0, brightness, 0, 1,0, 0, brightness,// 改变亮度
                 0, 0, 1, 0, brightness, 0, 0, 0, 1, 0 });

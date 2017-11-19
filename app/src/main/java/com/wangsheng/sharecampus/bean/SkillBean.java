@@ -11,6 +11,9 @@ import java.util.List;
 public class SkillBean {
     private int cateId;
     private String skillTotal;
+    private String content;
+    private String title;
+    private String theme;
     private List<String> skillList = new ArrayList<>();
 
     public int getCateId() {
@@ -35,5 +38,30 @@ public class SkillBean {
 
     public void setSkillList(List<String> skillList) {
         this.skillList = skillList;
+    }
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+
+    public String getTheme() {
+        return theme;
+    }
+
+    public void setTheme(String theme) {
+        this.theme = theme;
     }
 }

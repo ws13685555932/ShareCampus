@@ -6,7 +6,6 @@ package com.wangsheng.sharecampus.bean;
  */
 
 public class ResponseInfo<T> {
-    boolean success;
     String message;
     T data;
     String statusCode;
@@ -14,19 +13,10 @@ public class ResponseInfo<T> {
     @Override
     public String toString() {
         return "ResponseInfo{" +
-                "success=" + success +
                 ", message='" + message + '\'' +
                 ", data=" + data +
                 ", code=" + statusCode +
                 '}';
-    }
-
-    public boolean getSuccess() {
-        return success;
-    }
-
-    public void setSuccess(boolean success) {
-        this.success = success;
     }
 
     public String getMessage() {

@@ -2,9 +2,23 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wangsheng.sharecampus">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
 
     <application
         android:name=".MyApplication"
@@ -40,7 +54,21 @@
         <activity android:name=".activity.TaskOutActivity" />
         <activity android:name=".activity.MySincerityActivity" />
         <activity android:name=".activity.SettingActivity" />
-        <activity android:name=".activity.MyConcernActivity"></activity>
+        <activity android:name=".activity.MyConcernActivity" />
+        <activity android:name=".activity.CheckclassSkillActivity" />
+        <activity android:name=".activity.RegisterActivity"/>
+        <meta-data
+            android:name="Mob-AppKey"
+            android:value="21669efdee742" />
+        <meta-data
+            android:name="Mob-AppSecret"
+            android:value="af66d31a3ffec6c73d2b1f457ad98eef" />
+
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
     </application>
 
 </manifest>

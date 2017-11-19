@@ -14,4 +14,7 @@ import retrofit2.http.POST;
 public interface UserService {
     @POST("user/login")
     Observable<ResponseInfo<UserRequest>> login(@Body UserRequest user);
+
+    @POST("user/register")
+    Observable<ResponseInfo<UserRequest>> register(@Body UserRequest user);
 }

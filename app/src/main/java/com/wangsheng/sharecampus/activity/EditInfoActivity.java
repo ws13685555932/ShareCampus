@@ -4,9 +4,14 @@ import android.Manifest;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.DatePicker;
@@ -18,6 +23,7 @@ import com.lljjcoder.citypickerview.widget.CityPicker;
 import com.wangsheng.sharecampus.R;
 import com.wangsheng.sharecampus.dialog.PickSexDialog;
 import com.wangsheng.sharecampus.dialog.WriteDialog;
+import com.wangsheng.sharecampus.util.ShowUtil;
 import com.zhihu.matisse.Matisse;
 import com.zhihu.matisse.MimeType;
 import com.zhihu.matisse.engine.impl.GlideEngine;
@@ -193,6 +199,21 @@ public class EditInfoActivity extends AppCompatActivity{
     }
     @OnClick({R.id.rl_userhead,R.id.rl_bgimage})
     public void setImage(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            //当前系统大于等于6.0
+            if (ContextCompat.checkSelfPermission(EditInfoActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(EditInfoActivity.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 999);
+            }
+            else {
+                initImagemanager();
+            }
+        }
+        else {
+            initImagemanager();
+        }
+
+    }
+    private void initImagemanager(){
         Matisse.from(this)
                 .choose(MimeType.allOf())
                 .countable(true)
@@ -219,5 +240,27 @@ public class EditInfoActivity extends AppCompatActivity{
             user_bg.setImageURI(mSelected.get(0));
         }
     }
-
+    /**
+     * 获取权限
+     * @param requestCode
+     * @param permissions
+     * @param grantResults
+     */
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 999) {
+            if (grantResults.length >= 1) {
+                int result = grantResults[0];//相关权限
+                boolean Granted = result == PackageManager.PERMISSION_GRANTED;
+                if (Granted) {
+                    //具有权限
+                    initImagemanager();
+                } else {
+                    //不具有相关权限，给予用户提醒，比如Toast或者对话框，让用户去系统设置-应用管理里把相关权限开启
+                    ShowUtil.toast("请到设置中开启访问文件权限");
+                }
+            }
+        }
+    }
 }
