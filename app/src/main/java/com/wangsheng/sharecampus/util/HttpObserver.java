@@ -30,7 +30,7 @@ public abstract class HttpObserver<T> implements Observer<ResponseInfo<T>> {
 
     @Override
     public void onNext(ResponseInfo<T> responseInfo) {
-        if(responseInfo.getStatusCode().equals("200")){
+        if(responseInfo.getStatusCode().equals("200")||responseInfo.getStatusCode().equals("201")){
             onSuccess(responseInfo.getData());
         }else{
             onFailed(responseInfo.getMessage());

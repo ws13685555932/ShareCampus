@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:icon="@drawable/selector_item_skill"
+        android:icon="@drawable/selector_item_bigshot"
         android:id="@+id/task"
         android:title="拜师学艺"></item>
 

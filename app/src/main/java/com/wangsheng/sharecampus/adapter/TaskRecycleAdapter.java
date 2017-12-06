@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.wangsheng.sharecampus.R;
 import com.wangsheng.sharecampus.activity.TaskActivity;
 import com.wangsheng.sharecampus.bean.Task;
+import com.wangsheng.sharecampus.fragment.task.getTaskBean;
 
 import java.util.List;
 
@@ -25,8 +26,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class TaskRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener, View.OnLongClickListener {
     private Context mContext;
-    private List<Task> mData;
-    public TaskRecycleAdapter(Context mContext,List<Task> mData){
+    private List<getTaskBean> mData;
+    public TaskRecycleAdapter(Context mContext,List<getTaskBean> mData){
         this.mContext = mContext;
         this.mData = mData;
     }
@@ -84,11 +85,13 @@ public class TaskRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     int[] image = {R.drawable.image_head1,R.drawable.image_head2,R.drawable.image_head3,R.drawable.image_head4,R.drawable.image_head5};
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
-        ((MyViewHolder) holder).title.setText(mData.get(position).getTaskTitle());
-        ((MyViewHolder) holder).name.setText(mData.get(position).getCreaterName());
-        ((MyViewHolder) holder).price.setText(mData.get(position).getTaskPrice()+"");
-        ((MyViewHolder) holder).content.setText(mData.get(position).getTaskContent());
-        ((MyViewHolder) holder).time.setText(mData.get(position).getCreateTime());
+        ((MyViewHolder) holder).title.setText(mData.get(position).getTitle());
+        if(mData.get(position).getPublisherName() == null){
+            ((MyViewHolder) holder).name.setText(mData.get(position).getPublisherId());
+        }else ((MyViewHolder) holder).name.setText(mData.get(position).getPublisherName());
+        ((MyViewHolder) holder).price.setText(mData.get(position).getPrice()+"");
+        ((MyViewHolder) holder).content.setText(mData.get(position).getDescription());
+        ((MyViewHolder) holder).time.setText(mData.get(position).getPuttime());
         ((MyViewHolder) holder).usericon.setImageResource(image[position%5]);
         ((MyViewHolder) holder).task.setOnClickListener(new View.OnClickListener() {
             @Override

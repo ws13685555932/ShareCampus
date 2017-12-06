@@ -46,10 +46,10 @@
     <color name="transparent">#00ffffff</color>
 
 
-    <color name="skill_color1">#e66d8a</color>
-    <color name="skill_color2">#efad72</color>
-    <color name="skill_color3">#f9d26c</color>
-    <color name="skill_color4">#8aaace</color>
+    <color name="bigshot_color1">#e66d8a</color>
+    <color name="bigshot_color2">#efad72</color>
+    <color name="bigshot_color3">#f9d26c</color>
+    <color name="bigshot_color4">#8aaace</color>
     <color name="red">#ffff0000</color>
     <color name="light_red">#FF4040</color>
 

@@ -29,26 +29,32 @@
                 android:padding="10dp"/>
 
             <TextView
+                android:id="@+id/user_realname"
                 style="@style/AboutMeTextView"
                 android:text="真实姓名：王胜"/>
 
             <TextView
+                android:id="@+id/user_id"
                 style="@style/AboutMeTextView"
                 android:text="ID：523546244"/>
 
             <TextView
+                android:id="@+id/user_level"
                 style="@style/AboutMeTextView"
                 android:text="等级：Lv.7"/>
 
             <TextView
+                android:id="@+id/user_gender"
                 style="@style/AboutMeTextView"
                 android:text="性别：男"/>
 
             <TextView
+                android:id="@+id/user_address"
                 style="@style/AboutMeTextView"
                 android:text="地区：江苏省 南京市"/>
 
             <TextView
+                android:id="@+id/user_school"
                 style="@style/AboutMeTextView"
                 android:text="大学：河海大学"/>
 
@@ -58,6 +64,7 @@
 
 
             <TextView
+                android:id="@+id/user_age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="年龄：18"
@@ -77,6 +84,7 @@
                 android:padding="10dp"/>
 
             <TextView
+                android:id="@+id/user_introduce"
                 style="@style/AboutMeTextView"
                 android:text="还没有填写自我介绍"/>
 

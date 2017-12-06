@@ -24,7 +24,7 @@ public class SearchFragment extends Fragment {
 
     @BindView(R.id.tfl_labels)
     TagFlowLayout tflLabels;
-    public String TYPE = "SKILL";
+    public String TYPE = "bigshot";
     List<String> labelBean = new ArrayList<String>();
     Unbinder unbinder;
 
@@ -34,8 +34,8 @@ public class SearchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
         unbinder = ButterKnife.bind(this, view);
-        if(TYPE.equals("SKILL")){
-            setSkillView();
+        if(TYPE.equals("bigshot")){
+            setbigshotView();
         }
         else setTaskView();
 
@@ -51,7 +51,7 @@ public class SearchFragment extends Fragment {
 
         return view;
     }
-    public void setSkillView(){
+    public void setbigshotView(){
         labelBean.add("考研");
         labelBean.add("保研");
         labelBean.add("工作");

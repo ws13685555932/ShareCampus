@@ -20,10 +20,12 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.wangsheng.sharecampus.R;
-import com.wangsheng.sharecampus.dialog.LoginDialog;
+import com.wangsheng.sharecampus.activity.insertTask.CreateTaskActivity;
+import com.wangsheng.sharecampus.activity.myinfo.AboutMeActivity;
+import com.wangsheng.sharecampus.dialog.login.LoginDialog;
 import com.wangsheng.sharecampus.dialog.PickSexDialog;
-import com.wangsheng.sharecampus.fragment.SkillMainFragment;
-import com.wangsheng.sharecampus.fragment.TaskMainFragment;
+import com.wangsheng.sharecampus.fragment.BigshotMainFragment;
+import com.wangsheng.sharecampus.fragment.task.TaskMainFragment;
 import com.wangsheng.sharecampus.util.SharedUtil;
 
 import butterknife.BindView;
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @BindView(R.id.nav_view)
     NavigationView navigationView;
 
-    Fragment skill;
+    Fragment bigshot;
     Fragment task;
     public static LinearLayout islogin,notlogin;
     @Override
@@ -69,10 +71,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        skill = new SkillMainFragment();
+        bigshot = new BigshotMainFragment();
         task = new TaskMainFragment();
 
-        addFragment(R.id.content_layout, skill);
+        addFragment(R.id.content_layout, bigshot);
         addFragment(R.id.content_layout, task);
 
         hideFragment(task);
@@ -94,10 +96,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 switch (item.getItemId()){
                     case R.id.task:
                         hideFragment(task);
-                        showFragment(skill);
+                        showFragment(bigshot);
                         break;
                     case R.id.message:
-                        hideFragment(skill);
+                        hideFragment(bigshot);
                         showFragment(task);
                         break;
                     case R.id.add_task:

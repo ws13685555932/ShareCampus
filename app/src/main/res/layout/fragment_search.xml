@@ -6,24 +6,7 @@
     android:orientation="vertical">
 
 
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:orientation="vertical">
-       <TextView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="限定标签搜索更准确哦"
-           android:gravity="center"
-           android:textSize="20dp"
-           android:layout_marginTop="50dp"/>
-       <com.zhy.view.flowlayout.TagFlowLayout
-           android:id="@+id/tfl_labels"
-           android:layout_margin="60dp"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           app:max_select="-1"/>
-   </LinearLayout>
+    <include layout="@layout/content_search_bigshot" />
 
 
 </LinearLayout>

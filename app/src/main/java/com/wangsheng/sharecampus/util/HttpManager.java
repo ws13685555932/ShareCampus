@@ -39,14 +39,4 @@ public class HttpManager {
                 .build();
         return retrofit.create(serviceClass);
     }
-
-
-
-
-
-
-
-
-
-
 }

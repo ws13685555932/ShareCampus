@@ -7,7 +7,7 @@
         <item name="android:windowIsFloating">true</item>
         <item name="android:backgroundDimEnabled">false</item>
     </style>
-    <style name="SkillTextView" >
+    <style name="bigshotTextView" >
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">@color/gray_line</item>
     </style>

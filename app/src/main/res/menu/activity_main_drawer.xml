@@ -4,8 +4,12 @@
     <group android:id="@+id/group1">
         <item
             android:id="@+id/nav_invite"
-            android:icon="@drawable/nav_invite"
+            android:icon="@drawable/ic_sendinvite"
             android:title="发出的邀请"/>
+        <item
+            android:id="@+id/nav_getinvite"
+            android:icon="@drawable/nav_invite"
+            android:title="收到的邀请"/>
         <item
             android:id="@+id/nav_taskout"
             android:icon="@drawable/nav_send"

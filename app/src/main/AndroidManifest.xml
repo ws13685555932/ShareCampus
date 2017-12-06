@@ -18,7 +18,7 @@
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:name=".MyApplication"
@@ -41,10 +41,10 @@
         <activity android:name=".activity.TaskActivity" />
         <activity android:name=".activity.MyWalletActivity" />
         <activity android:name=".activity.MyCollectionActivity" />
-        <activity android:name=".activity.CreateTaskActivity" />
-        <activity android:name=".activity.AboutMeActivity" />
+        <activity android:name=".activity.insertTask.CreateTaskActivity" />
+        <activity android:name=".activity.myinfo.AboutMeActivity" />
         <activity
-            android:name=".activity.EditInfoActivity"
+            android:name=".activity.editinfo.EditInfoActivity"
             android:exported="true" />
         <activity android:name=".activity.TaskAcceptActivity" />
         <activity android:name=".activity.MessageActivity" />
@@ -55,8 +55,9 @@
         <activity android:name=".activity.MySincerityActivity" />
         <activity android:name=".activity.SettingActivity" />
         <activity android:name=".activity.MyConcernActivity" />
-        <activity android:name=".activity.CheckclassSkillActivity" />
-        <activity android:name=".activity.RegisterActivity"/>
+        <activity android:name=".activity.CheckclassbigshotActivity" />
+        <activity android:name=".activity.register.RegisterActivity" />
+
         <meta-data
             android:name="Mob-AppKey"
             android:value="21669efdee742" />
@@ -69,6 +70,9 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity android:name=".activity.BigshotActivity" />
+        <activity android:name=".activity.SearchBiashotActivity" />
+        <activity android:name=".activity.changepass.ChangepassActivity"></activity>
     </application>
 
 </manifest>

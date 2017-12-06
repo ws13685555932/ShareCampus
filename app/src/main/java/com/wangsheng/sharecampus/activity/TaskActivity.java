@@ -21,7 +21,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.wangsheng.sharecampus.R;
-import com.wangsheng.sharecampus.bean.Task;
+import com.wangsheng.sharecampus.fragment.task.getTaskBean;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
 
@@ -61,7 +61,7 @@ public class TaskActivity extends AppCompatActivity{
     RelativeLayout rltask;
     @BindView(R.id.text_reply_num)
     TextView replynum;
-    public static Task task;
+    public static getTaskBean task;
     private ArrayList<HashMap<String,String>> list;
     private CommonAdapter commonAdapter;
     InputMethodManager imm;
@@ -115,11 +115,13 @@ public class TaskActivity extends AppCompatActivity{
 
             }
         });
-        title.setText(task.getTaskTitle());
-        content.setText(task.getTaskContent());
-        price.setText("悬赏金额：￥"+task.getTaskPrice());
-        name.setText(task.getCreaterName());
-        time.setText("发布于2016年10月15日 "+task.getCreateTime());
+        title.setText(task.getTitle());
+        content.setText(task.getDescription());
+        price.setText("悬赏金额：￥"+task.getPrice());
+        if(task.getPublisherName() == null){
+            name.setText(task.getPublisherId());
+        }else name.setText(task.getPublisherId());
+        time.setText("发布于2016年10月15日 "+task.getPuttime());
         editreply.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {

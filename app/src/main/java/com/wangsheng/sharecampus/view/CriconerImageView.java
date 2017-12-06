@@ -17,6 +17,7 @@ import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 
 import com.wangsheng.sharecampus.R;
+import com.wangsheng.sharecampus.util.BitmapUtil;
 
 /**
  * Created by windows8 on 2017/11/15.
@@ -72,12 +73,11 @@ public class CriconerImageView extends AppCompatImageView {
      * @return Bitmap
      */
     private Bitmap getRoundBitmap(Bitmap bitmap, int roundPx) {
+        bitmap = BitmapUtil.compress(bitmap,0.1f);
         Bitmap output = Bitmap.createBitmap(bitmap.getWidth(),
                 bitmap.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(output);
-
         final int color = 0xff424242;
-
         final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
         final RectF rectF = new RectF(rect);
         paint.setAntiAlias(true);
@@ -92,7 +92,5 @@ public class CriconerImageView extends AppCompatImageView {
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
         canvas.drawBitmap(bitmap, rect, rect, paint);
         return output;
-
-
     }
 }

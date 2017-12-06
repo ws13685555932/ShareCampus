@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.wangsheng.sharecampus.R;
 import com.wangsheng.sharecampus.view.DividerItemDecoration;
-import com.wangsheng.sharecampus.view.MyLinearLayoutManager;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
 
@@ -75,7 +74,7 @@ public class MessageActivity extends AppCompatActivity {
             }
         });
 
-        MyLinearLayoutManager layoutManager = new MyLinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
         recyclerChat.setLayoutManager(layoutManager);
         recyclerChat.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL_LIST));
     }

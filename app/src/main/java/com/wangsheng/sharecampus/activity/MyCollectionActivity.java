@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.wangsheng.sharecampus.R;
-import com.wangsheng.sharecampus.bean.Task;
+import com.wangsheng.sharecampus.fragment.task.getTaskBean;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
 
@@ -34,29 +34,29 @@ public class MyCollectionActivity extends AppCompatActivity {
     ImageView back;
     @BindView(R.id.iv_recycle)
     RecyclerView recyclerView;
-    private List<Task> list = new ArrayList<Task>();
+    private List<getTaskBean> list = new ArrayList<getTaskBean>();
     private GridLayoutManager mLayoutManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_collection);
         ButterKnife.bind(this);
-        list = new ArrayList<Task>();
-        Task task = new Task();
-        task.setCreaterName("李逸云");
-        task.setTaskTitle("高数高数");
-        task.setTaskContent("高数3.1的15题怎么做啊，急急急急！！明天就要交作业了");
-        task.setCreateTime("21:30");
-        task.setTaskPrice(0.5);
+        list = new ArrayList<getTaskBean>();
+        getTaskBean task = new getTaskBean();
+        task.setPublisherName("李逸云");
+        task.setTitle("高数高数");
+        task.setDescription("高数3.1的15题怎么做啊，急急急急！！明天就要交作业了");
+        task.setPuttime("21:30");
+        task.setPrice(0.5);
         list.add(task);
         list.add(task);
         list.add(task);
         list.add(task);
         mLayoutManager=new GridLayoutManager(MyCollectionActivity.this,1,GridLayoutManager.VERTICAL,false);//设置为一个1列的纵向网格布局
         recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setAdapter(new CommonAdapter<Task>(getContext(),R.layout.item_recy_coll_task,list) {
+        recyclerView.setAdapter(new CommonAdapter<getTaskBean>(getContext(),R.layout.item_recy_coll_task,list) {
             @Override
-            protected void convert(ViewHolder holder, Task o, final int position) {
+            protected void convert(ViewHolder holder, getTaskBean o, final int position) {
                 holder.setOnLongClickListener(R.id.coll_ll_task, new View.OnLongClickListener() {
                     @Override
                     public boolean onLongClick(View view) {
@@ -80,11 +80,11 @@ public class MyCollectionActivity extends AppCompatActivity {
                     }
                 });
                 int[] image = {R.drawable.image_head1,R.drawable.image_head2,R.drawable.image_head3,R.drawable.image_head4,R.drawable.image_head5};
-                ((TextView)holder.getView(R.id.task_title)).setText(list.get(position).getTaskTitle());
-                ((TextView)holder.getView(R.id.task_user_name)).setText(list.get(position).getCreaterName());
-                ((TextView)holder.getView(R.id.task_price)).setText(list.get(position).getTaskPrice()+"");
-                ((TextView)holder.getView(R.id.task_content)).setText(list.get(position).getTaskContent());
-                ((TextView)holder.getView(R.id.task_time)).setText(list.get(position).getCreateTime());
+                ((TextView)holder.getView(R.id.task_title)).setText(list.get(position).getTitle());
+                ((TextView)holder.getView(R.id.task_user_name)).setText(list.get(position).getPublisherName());
+                ((TextView)holder.getView(R.id.task_price)).setText(list.get(position).getPrice()+"");
+                ((TextView)holder.getView(R.id.task_content)).setText(list.get(position).getDescription());
+                ((TextView)holder.getView(R.id.task_time)).setText(list.get(position).getPuttime());
                 ((ImageView)holder.getView(R.id.civ_user_icon)).setImageResource(image[position%5]);
             }
         });

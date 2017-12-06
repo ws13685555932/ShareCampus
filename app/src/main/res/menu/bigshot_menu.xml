@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:icon="@drawable/ic_blue_share"
+        android:id="@+id/share"
+        android:title="分享"/>
+
+    <item
+        android:icon="@drawable/ic_blue_jubao"
+        android:title="举报"/>
+
+</menu>

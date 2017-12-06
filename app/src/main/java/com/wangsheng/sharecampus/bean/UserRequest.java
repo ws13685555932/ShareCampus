@@ -8,6 +8,7 @@ public class UserRequest {
     String userName;
     String userPass;
 
+
     public String getUserName() {
         return userName;
     }
@@ -24,11 +25,4 @@ public class UserRequest {
         this.userPass = userPass;
     }
 
-    @Override
-    public String toString() {
-        return "UserRequest{" +
-                "userName=" + userName +
-                ", userPass=" + userPass +
-                '}';
-    }
 }
