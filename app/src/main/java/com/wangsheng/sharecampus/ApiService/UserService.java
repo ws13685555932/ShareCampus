@@ -1,12 +1,17 @@
 package com.wangsheng.sharecampus.ApiService;
 
-import com.wangsheng.sharecampus.activity.changepass.ChangepassBean;
-import com.wangsheng.sharecampus.activity.editinfo.EditInfoBean;
-import com.wangsheng.sharecampus.activity.myinfo.infoBean;
-import com.wangsheng.sharecampus.activity.register.RegisterBean;
+import com.google.gson.JsonObject;
+import com.wangsheng.sharecampus.ApiServiceBean.UserServiceRequset.UserChangepassRequest;
+import com.wangsheng.sharecampus.ApiServiceBean.UserServiceRequset.UserLoginRequest;
+import com.wangsheng.sharecampus.ApiServiceBean.UserServiceRequset.UserRegisterRequest;
+import com.wangsheng.sharecampus.ApiServiceBean.UserServiceResponse.UserChangepassResponse;
+import com.wangsheng.sharecampus.ApiServiceBean.UserServiceResponse.UserEditResponse;
+import com.wangsheng.sharecampus.ApiServiceBean.UserServiceResponse.UserLoginResponse;
+import com.wangsheng.sharecampus.ApiServiceBean.UserServiceResponse.UserRegisterResponse;
+import com.wangsheng.sharecampus.ApiServiceBean.UserServiceRequset.UserEditRequest;
+import com.wangsheng.sharecampus.ApiServiceBean.UserServiceRequset.UserInfoRequset;
 import com.wangsheng.sharecampus.bean.ResponseInfo;
 import com.wangsheng.sharecampus.bean.UserRequest;
-import com.wangsheng.sharecampus.dialog.login.LoginBean;
 
 import io.reactivex.Observable;
 import retrofit2.http.Body;
@@ -20,21 +25,23 @@ import retrofit2.http.Query;
 
 public interface UserService {
     @POST("user/login")
-    Observable<ResponseInfo<LoginBean>> login(@Body LoginBean user);
+    Observable<ResponseInfo<UserLoginResponse>> login(@Body UserLoginRequest user);
 
     @POST("user/register")
-    Observable<ResponseInfo<RegisterBean>> register(@Body RegisterBean user);
+    Observable<ResponseInfo<UserRegisterResponse>> register(@Body UserRegisterRequest user);
 
     @POST("user/info")
-    Observable<ResponseInfo<Object>> info(@Body infoBean userName);
+    Observable<ResponseInfo<JsonObject>> info(@Body UserInfoRequset userName);
 
     @POST("user/edit")
-    Observable<ResponseInfo<EditInfoBean>> edit(@Body EditInfoBean user);
+    Observable<ResponseInfo<UserEditResponse>> edit(@Body UserEditRequest user);
 
     @POST("user/changePass")
-    Observable<ResponseInfo<ChangepassBean>> changePass(@Body ChangepassBean user);
+    Observable<ResponseInfo<UserChangepassResponse>> changePass(@Body UserChangepassRequest user);
 
     @GET("user/check")
     Observable<ResponseInfo<UserRequest>> check(@Query("userName") String userName);
 
+    @POST("user/infoById")
+    Observable<ResponseInfo<JsonObject>> infoById(@Body UserInfoRequset userId);
 }

@@ -1,6 +1,12 @@
 package com.wangsheng.sharecampus.ApiService;
 
-import com.wangsheng.sharecampus.bean.CommentBean;
+import com.google.gson.JsonArray;
+import com.wangsheng.sharecampus.ApiServiceBean.CommentServiceRequest.CommentDeleteRequest;
+import com.wangsheng.sharecampus.ApiServiceBean.CommentServiceRequest.CommentInsertRequest;
+import com.wangsheng.sharecampus.ApiServiceBean.CommentServiceRequest.CommentgetTaskRequest;
+import com.wangsheng.sharecampus.ApiServiceBean.CommentServiceRequest.CommentgetUserRequest;
+import com.wangsheng.sharecampus.ApiServiceBean.CommentServiceResponse.CommentDeleteResponse;
+import com.wangsheng.sharecampus.ApiServiceBean.CommentServiceResponse.CommentInsertResponse;
 import com.wangsheng.sharecampus.bean.ResponseInfo;
 
 import io.reactivex.Observable;
@@ -13,11 +19,11 @@ import retrofit2.http.POST;
 
 public interface CommentService {
     @POST("comment/insert")
-    Observable<ResponseInfo<CommentBean>> insert(@Body CommentBean comment);
+    Observable<ResponseInfo<CommentInsertResponse>> insert(@Body CommentInsertRequest comment);
     @POST("comment/delete")
-    Observable<ResponseInfo<CommentBean>> delete(@Body CommentBean comment);
+    Observable<ResponseInfo<CommentDeleteResponse>> delete(@Body CommentDeleteRequest comment);
     @POST("comment/getAllComments")
-    Observable<ResponseInfo<CommentBean>> getAllComments(@Body CommentBean comment);
+    Observable<ResponseInfo<JsonArray>> getAllComments(@Body CommentgetUserRequest comment);
     @POST("comment/getTaskComments")
-    Observable<ResponseInfo<CommentBean>> getTaskComments(@Body CommentBean comment);
+    Observable<ResponseInfo<JsonArray>> getTaskComments(@Body CommentgetTaskRequest comment);
 }

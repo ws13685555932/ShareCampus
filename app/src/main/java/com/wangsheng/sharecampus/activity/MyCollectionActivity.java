@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.wangsheng.sharecampus.R;
-import com.wangsheng.sharecampus.fragment.task.getTaskBean;
+import com.wangsheng.sharecampus.ApiServiceBean.TaskServiceResponse.TaskgetTaskResponse;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
 
@@ -34,15 +34,15 @@ public class MyCollectionActivity extends AppCompatActivity {
     ImageView back;
     @BindView(R.id.iv_recycle)
     RecyclerView recyclerView;
-    private List<getTaskBean> list = new ArrayList<getTaskBean>();
+    private List<TaskgetTaskResponse> list = new ArrayList<TaskgetTaskResponse>();
     private GridLayoutManager mLayoutManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_collection);
         ButterKnife.bind(this);
-        list = new ArrayList<getTaskBean>();
-        getTaskBean task = new getTaskBean();
+        list = new ArrayList<TaskgetTaskResponse>();
+        TaskgetTaskResponse task = new TaskgetTaskResponse();
         task.setPublisherName("李逸云");
         task.setTitle("高数高数");
         task.setDescription("高数3.1的15题怎么做啊，急急急急！！明天就要交作业了");
@@ -54,9 +54,9 @@ public class MyCollectionActivity extends AppCompatActivity {
         list.add(task);
         mLayoutManager=new GridLayoutManager(MyCollectionActivity.this,1,GridLayoutManager.VERTICAL,false);//设置为一个1列的纵向网格布局
         recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setAdapter(new CommonAdapter<getTaskBean>(getContext(),R.layout.item_recy_coll_task,list) {
+        recyclerView.setAdapter(new CommonAdapter<TaskgetTaskResponse>(getContext(),R.layout.item_recy_coll_task,list) {
             @Override
-            protected void convert(ViewHolder holder, getTaskBean o, final int position) {
+            protected void convert(ViewHolder holder, TaskgetTaskResponse o, final int position) {
                 holder.setOnLongClickListener(R.id.coll_ll_task, new View.OnLongClickListener() {
                     @Override
                     public boolean onLongClick(View view) {

@@ -6,25 +6,36 @@ package com.wangsheng.sharecampus.bean;
  */
 
 public class ResponseInfoList<T> {
-    String message;
+
     T dataList;
-    String statusCode;
+    int pageNo;
+    int pageSize;
+    int total;
 
-    @Override
-    public String toString() {
-        return "ResponseInfo{" +
-                ", message='" + message + '\'' +
-                ", dataList=" + dataList +
-                ", code=" + statusCode +
-                '}';
+    public int getTotal() {
+        return total;
     }
 
-    public String getMessage() {
-        return message;
+    public void setTotal(int total) {
+        this.total = total;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public int getPageSize() {
+
+        return pageSize;
+    }
+
+    public void setPageSize(int pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    public int getPageNo() {
+
+        return pageNo;
+    }
+
+    public void setPageNo(int pageNo) {
+        this.pageNo = pageNo;
     }
 
     public T getDataList() {
@@ -35,11 +46,4 @@ public class ResponseInfoList<T> {
         this.dataList = dataList;
     }
 
-    public String getStatusCode() {
-        return statusCode;
-    }
-
-    public void setStatusCode(String statusCode) {
-        this.statusCode = statusCode;
-    }
 }

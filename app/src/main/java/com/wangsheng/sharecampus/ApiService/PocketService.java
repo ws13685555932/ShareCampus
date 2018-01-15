@@ -1,7 +1,10 @@
 package com.wangsheng.sharecampus.ApiService;
 
+import com.wangsheng.sharecampus.ApiServiceBean.PocketServiceRequest.PocketBalanceRequest;
+import com.wangsheng.sharecampus.ApiServiceBean.PocketServiceRequest.PocketUpdateRequest;
+import com.wangsheng.sharecampus.ApiServiceBean.PocketServiceResponse.PocketBalanceResponse;
+import com.wangsheng.sharecampus.ApiServiceBean.PocketServiceResponse.PocketUpdateResponse;
 import com.wangsheng.sharecampus.bean.ResponseInfo;
-import com.wangsheng.sharecampus.bean.UserRequest;
 
 import io.reactivex.Observable;
 import retrofit2.http.Body;
@@ -13,9 +16,9 @@ import retrofit2.http.POST;
 
 public interface PocketService {
     @POST("/pocket/balance")
-    Observable<ResponseInfo<UserRequest>> balance(@Body UserRequest user);
+    Observable<ResponseInfo<PocketBalanceResponse>> balance(@Body PocketBalanceRequest pocket);
 
     @POST("/pocket/balance")
-    Observable<ResponseInfo<UserRequest>> changePass(@Body UserRequest user);
+    Observable<ResponseInfo<PocketUpdateResponse>> changePass(@Body PocketUpdateRequest pocket);
 
 }

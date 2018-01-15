@@ -1,6 +1,14 @@
 package com.wangsheng.sharecampus.ApiService;
 
-import com.wangsheng.sharecampus.activity.insertTask.CreateTaskBean;
+import com.google.gson.JsonArray;
+import com.wangsheng.sharecampus.ApiServiceBean.TaskServiceRequest.TaskCreatetaskRequest;
+import com.wangsheng.sharecampus.ApiServiceBean.TaskServiceRequest.TaskDeleteRequest;
+import com.wangsheng.sharecampus.ApiServiceBean.TaskServiceRequest.TaskEditRequest;
+import com.wangsheng.sharecampus.ApiServiceBean.TaskServiceRequest.TaskSearchByCategoryRequest;
+import com.wangsheng.sharecampus.ApiServiceBean.TaskServiceRequest.TaskSearchByTitleRequest;
+import com.wangsheng.sharecampus.ApiServiceBean.TaskServiceRequest.TaskgetUserTaskRequest;
+import com.wangsheng.sharecampus.ApiServiceBean.TaskServiceResponse.TaskCreatetaskResponse;
+import com.wangsheng.sharecampus.ApiServiceBean.TaskServiceResponse.TaskgetTaskResponse;
 import com.wangsheng.sharecampus.bean.ResponseInfo;
 import com.wangsheng.sharecampus.bean.ResponseInfoList;
 
@@ -16,25 +24,25 @@ import retrofit2.http.Query;
 
 public interface TaskService {
     @POST("task/insert")
-    Observable<ResponseInfo<CreateTaskBean>> insert(@Body CreateTaskBean task);
+    Observable<ResponseInfo<TaskCreatetaskResponse>> insert(@Body TaskCreatetaskRequest task);
     @POST("task/insertWithPic")
-    Observable<ResponseInfo<CreateTaskBean>> insertWithPic(@Body CreateTaskBean task);
+    Observable<ResponseInfo<TaskCreatetaskResponse>> insertWithPic(@Body TaskCreatetaskRequest task);
     @POST("task/edit")
-    Observable<ResponseInfo<CreateTaskBean>> edit(@Body CreateTaskBean task);
+    Observable<ResponseInfo<TaskEditRequest>> edit(@Body TaskEditRequest task);
     @POST("task/delete")
-    Observable<ResponseInfo<CreateTaskBean>> delete(@Body CreateTaskBean taskId);
+    Observable<ResponseInfo<TaskDeleteRequest>> delete(@Body TaskDeleteRequest taskId);
     @GET("task/getTaskByTaskId")
-    Observable<ResponseInfo<CreateTaskBean>> getTaskByTaskId(@Body int task);
+    Observable<ResponseInfo<TaskgetTaskResponse>> getTaskByTaskId(@Query("taskId") int task);
     @GET("task/getTasks")
-    Observable<ResponseInfoList<Object>> getTasks(@Query("pageNo") int pageNo, @Query("pageSize") int pageSize);
-    @GET("task/getAllTasks")
-    Observable<ResponseInfo<String>> getAllTasks(@Query("pageNo") int pageNo, @Query("pageSize") int pageSize, @Query("publisherId") int publisherId);
-    @GET("task/getUncompletedTasks")
-    Observable<ResponseInfo<String>> getUncompletedTasks(@Query("pageNo") int pageNo, @Query("pageSize") int pageSize, @Query("publisherId") int publisherId);
-    @GET("task/getCompletedTasks")
-    Observable<ResponseInfo<String>> getCompletedTasks(@Query("pageNo") int pageNo, @Query("pageSize") int pageSize, @Query("publisherId") int publisherId);
-    @GET("task/searchTaskByTitle")
-    Observable<ResponseInfo<String>> searchTaskByTitle(@Query("pageNo") int pageNo, @Query("pageSize") int pageSize, @Query("title") String title);
-    @GET("task/searchTaskByCategory")
-    Observable<ResponseInfo<String>> searchTaskByCategory(@Query("pageNo") int pageNo, @Query("pageSize") int pageSize, @Query("category") int category);
+    Observable<ResponseInfoList<JsonArray>> getTasks(@Query("pageNo") int pageNo, @Query("pageSize") int pageSize);
+    @POST("task/getAllTasks")
+    Observable<ResponseInfoList<JsonArray>> getAllTasks(@Query("pageNo") int pageNo, @Query("pageSize") int pageSize, @Body TaskgetUserTaskRequest publisherId);
+    @POST("task/getUncompletedTasks")
+    Observable<ResponseInfoList<JsonArray>> getUncompletedTasks(@Query("pageNo") int pageNo, @Query("pageSize") int pageSize, @Body TaskgetUserTaskRequest publisherId);
+    @POST("task/getCompletedTasks")
+    Observable<ResponseInfoList<JsonArray>> getCompletedTasks(@Query("pageNo") int pageNo, @Query("pageSize") int pageSize, @Body TaskgetUserTaskRequest publisherId);
+    @POST("task/searchTaskByTitle")
+    Observable<ResponseInfoList<JsonArray>> searchTaskByTitle(@Query("pageNo") int pageNo, @Query("pageSize") int pageSize, @Body TaskSearchByTitleRequest title);
+    @POST("task/searchTaskByCategory")
+    Observable<ResponseInfoList<JsonArray>> searchTaskByCategory(@Query("pageNo") int pageNo, @Query("pageSize") int pageSize, @Body TaskSearchByCategoryRequest categoty);
 }

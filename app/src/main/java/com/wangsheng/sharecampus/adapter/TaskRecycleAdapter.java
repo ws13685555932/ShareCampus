@@ -11,8 +11,7 @@ import android.widget.TextView;
 
 import com.wangsheng.sharecampus.R;
 import com.wangsheng.sharecampus.activity.TaskActivity;
-import com.wangsheng.sharecampus.bean.Task;
-import com.wangsheng.sharecampus.fragment.task.getTaskBean;
+import com.wangsheng.sharecampus.ApiServiceBean.TaskServiceResponse.TaskgetTaskResponse;
 
 import java.util.List;
 
@@ -26,8 +25,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class TaskRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener, View.OnLongClickListener {
     private Context mContext;
-    private List<getTaskBean> mData;
-    public TaskRecycleAdapter(Context mContext,List<getTaskBean> mData){
+    private List<TaskgetTaskResponse> mData;
+    public TaskRecycleAdapter(Context mContext,List<TaskgetTaskResponse> mData){
         this.mContext = mContext;
         this.mData = mData;
     }
@@ -87,7 +86,7 @@ public class TaskRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         ((MyViewHolder) holder).title.setText(mData.get(position).getTitle());
         if(mData.get(position).getPublisherName() == null){
-            ((MyViewHolder) holder).name.setText(mData.get(position).getPublisherId());
+            ((MyViewHolder) holder).name.setText(mData.get(position).getPublisherId()+"");
         }else ((MyViewHolder) holder).name.setText(mData.get(position).getPublisherName());
         ((MyViewHolder) holder).price.setText(mData.get(position).getPrice()+"");
         ((MyViewHolder) holder).content.setText(mData.get(position).getDescription());

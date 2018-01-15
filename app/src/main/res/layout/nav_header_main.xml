@@ -17,7 +17,6 @@
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
         android:orientation="vertical">
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/civ_user_icon"
@@ -29,6 +28,7 @@
 
 
         <TextView
+            android:id="@+id/user_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/nav_header_vertical_spacing"
@@ -37,9 +37,9 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/user_introduce"
             android:textSize="12sp"
-            android:text="萌えとは即ち正义であり"
+            android:text="新人觐见"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>

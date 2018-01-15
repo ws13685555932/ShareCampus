@@ -10,11 +10,9 @@ import android.widget.ImageView;
 
 import com.wangsheng.sharecampus.R;
 import com.wangsheng.sharecampus.adapter.CategoryPageAdapter;
-import com.wangsheng.sharecampus.adapter.DrawerTaskInAdapter;
-import com.wangsheng.sharecampus.fragment.RecycleFragment;
+import com.wangsheng.sharecampus.fragment.MyTaskRecycleFragment;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import butterknife.BindView;
@@ -30,28 +28,15 @@ public class TaskInActivity extends AppCompatActivity {
     @BindView(R.id.iv_back)
     ImageView back;
 
+    List<Fragment> fragList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_in);
         ButterKnife.bind(this);
-        List<Fragment> fragList = new ArrayList<>();
-        List<HashMap<String,String>> list = new ArrayList<HashMap<String, String>>();
-        HashMap<String,String> map = new HashMap<String, String>();
-        map.put("title","代取申通快递");
-        map.put("time","今天10:26");
-        map.put("showtimes","50次浏览");
-        map.put("state","进行中");
-        map.put("price","3金");
-        map.put("content","骏园一心楼下申通帐篷，明天中午前要拿走，送到我宿舍，具体私聊。");
-        map.put("resttime","剩余20小时");
-        map.put("type","代取代购");
-        list.add(map);
-        list.add(map);
-        for (int i = 0; i < 3; i++) {
-            RecycleFragment recycleFragment = new RecycleFragment();
-            DrawerTaskInAdapter adapter = new DrawerTaskInAdapter(list,TaskInActivity.this);
-            recycleFragment.adapter = adapter;
+        for (int i = 0; i < 4; i++) {
+            MyTaskRecycleFragment recycleFragment = new MyTaskRecycleFragment();
+            recycleFragment.type = i+1;
             fragList.add(recycleFragment);
         }
 

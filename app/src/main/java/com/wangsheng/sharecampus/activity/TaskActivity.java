@@ -19,19 +19,33 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.wangsheng.sharecampus.ApiService.CommentService;
+import com.wangsheng.sharecampus.ApiServiceBean.CommentServiceRequest.CommentInsertRequest;
+import com.wangsheng.sharecampus.ApiServiceBean.CommentServiceRequest.CommentgetTaskRequest;
+import com.wangsheng.sharecampus.ApiServiceBean.CommentServiceResponse.CommentInsertResponse;
+import com.wangsheng.sharecampus.ApiServiceBean.CommentServiceResponse.CommentgetTaskResponse;
+import com.wangsheng.sharecampus.ApiServiceBean.TaskServiceResponse.TaskgetTaskResponse;
 import com.wangsheng.sharecampus.R;
-import com.wangsheng.sharecampus.fragment.task.getTaskBean;
+import com.wangsheng.sharecampus.bean.ResponseInfo;
+import com.wangsheng.sharecampus.util.HttpManager;
+import com.wangsheng.sharecampus.util.HttpObserver;
+import com.wangsheng.sharecampus.util.RxSchedulersHelper;
+import com.wangsheng.sharecampus.util.SharedUtil;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.reactivex.Observable;
 
 public class TaskActivity extends AppCompatActivity{
 
@@ -61,8 +75,8 @@ public class TaskActivity extends AppCompatActivity{
     RelativeLayout rltask;
     @BindView(R.id.text_reply_num)
     TextView replynum;
-    public static getTaskBean task;
-    private ArrayList<HashMap<String,String>> list;
+    public static TaskgetTaskResponse task;
+    private ArrayList<CommentgetTaskResponse> list = new ArrayList<CommentgetTaskResponse>();
     private CommonAdapter commonAdapter;
     InputMethodManager imm;
 
@@ -73,20 +87,17 @@ public class TaskActivity extends AppCompatActivity{
         ButterKnife.bind(this);
 
         imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-       list = new ArrayList<HashMap<String,String>>();
-        HashMap<String,String> map = new HashMap<String,String>();
-        map.put("username","萧炎");
-        map.put("messagetime","昨天");
-        map.put("messagecontent","我明天没有空啊，后天可不可以啊");
-        list.add(map);
-        list.add(map);
-        commonAdapter = new CommonAdapter<HashMap<String,String>>(this, R.layout.item_recy_leave_message, list) {
+        commonAdapter = new CommonAdapter<CommentgetTaskResponse>(this, R.layout.item_recy_leave_message, list) {
             @Override
-            protected void convert(ViewHolder holder, HashMap<String,String> o, int position) {
+            protected void convert(ViewHolder holder,CommentgetTaskResponse o, int position) {
                 ((TextView)holder.getView(R.id.text_message_buildnum)).setText("#"+(position+1));
-                ((TextView)holder.getView(R.id.text_message_content)).setText(o.get("messagecontent"));
-                ((TextView)holder.getView(R.id.text_message_time)).setText(o.get("messagetime"));
-                ((TextView)holder.getView(R.id.text_message_user_name)).setText(o.get("username"));
+                ((TextView)holder.getView(R.id.text_message_content)).setText(o.getContent());
+                ((TextView)holder.getView(R.id.text_message_time)).setText(o.getSendTime().toString());
+                String replyto="";
+//                if(o.getToUid()!=0){
+//                    replyto="回复"+o.getToUid();
+//                }
+                ((TextView)holder.getView(R.id.text_message_user_name)).setText(o.getFromUid()+replyto);
             }
         };
         recyclerLeaveMessage.setAdapter(commonAdapter);
@@ -119,18 +130,18 @@ public class TaskActivity extends AppCompatActivity{
         content.setText(task.getDescription());
         price.setText("悬赏金额：￥"+task.getPrice());
         if(task.getPublisherName() == null){
-            name.setText(task.getPublisherId());
-        }else name.setText(task.getPublisherId());
-        time.setText("发布于2016年10月15日 "+task.getPuttime());
+            name.setText(task.getPublisherId()+"");
+        }else name.setText(task.getPublisherName());
+        time.setText("发布于"+task.getPuttime());
         editreply.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 if((i == EditorInfo.IME_ACTION_SEND)&(textView.getText().toString().length()!=0)){
-                    HashMap<String,String> map = new HashMap<String,String>();
-                    map.put("username","陌上疏影凉");
-                    map.put("messagetime","刚刚");
-                    map.put("messagecontent",editreply.getText().toString());
-                    list.add(map);
+                    CommentgetTaskResponse comment = new CommentgetTaskResponse();
+                    comment.setTaskId((int)SharedUtil.getParam("userId",10000));
+                    comment.setSendTime(new Timestamp(System.currentTimeMillis()));
+                    comment.setContent(editreply.getText().toString());
+
                     commonAdapter.notifyDataSetChanged();
                     replynum.setText("留言("+list.size()+")");
                     if (imm != null) {
@@ -138,12 +149,14 @@ public class TaskActivity extends AppCompatActivity{
                     }
                     bottomreply.setVisibility(View.GONE);
                     bottomtool.setVisibility(View.VISIBLE);
+                    addComment(comment);
                     return true;
                 }
 
                 return false;
             }
         });
+        getComment();
     }
 
     @OnClick(R.id.btn_accept)
@@ -214,6 +227,49 @@ public class TaskActivity extends AppCompatActivity{
             }
         }
         return false;
+    }
+    public void getComment(){
+        CommentService commentService = HttpManager.getInstance().createService(CommentService.class);
+        CommentgetTaskRequest commentgetTaskRequest = new CommentgetTaskRequest();
+        commentgetTaskRequest.setTaskId(task.getTaskId());
+        Observable<ResponseInfo<JsonArray>> call = commentService.getTaskComments(commentgetTaskRequest);
+        call.compose(RxSchedulersHelper.<ResponseInfo<JsonArray>>io_main())
+                .subscribe(new HttpObserver<JsonArray>() {
+                    @Override
+                    public void onSuccess(JsonArray commentlist) {
+                        Gson gson = new Gson();
+                        list = new ArrayList<CommentgetTaskResponse>();
+                        for(int i=0;i<commentlist.size();i++){
+                            CommentgetTaskResponse comment = gson.fromJson(commentlist.get(i), CommentgetTaskResponse.class);
+                            list.add(comment);
+                        }
+                        commonAdapter.notifyDataSetChanged();
+                    }
+                    @Override
+                    public void onFailed(String message) {
+                        Toast.makeText(TaskActivity.this,message,Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+    public void addComment(CommentgetTaskResponse comment){
+        CommentService commentService = HttpManager.getInstance().createService(CommentService.class);
+        CommentInsertRequest commentInsertRequest = new CommentInsertRequest();
+        commentInsertRequest.setTaskId(task.getTaskId());
+        commentInsertRequest.setContent(comment.getContent());
+        commentInsertRequest.setFromUid(comment.getFromUid());
+        //commentInsertRequest.setToUid(comment.getToUid());
+        Observable<ResponseInfo<CommentInsertResponse>> call = commentService.insert(commentInsertRequest);
+        call.compose(RxSchedulersHelper.<ResponseInfo<CommentInsertResponse>>io_main())
+                .subscribe(new HttpObserver<CommentInsertResponse>() {
+                    @Override
+                    public void onSuccess(CommentInsertResponse commentlist) {
+                        getComment();
+                    }
+                    @Override
+                    public void onFailed(String message) {
+                        Toast.makeText(TaskActivity.this,message,Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
 }

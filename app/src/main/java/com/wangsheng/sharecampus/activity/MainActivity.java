@@ -3,46 +3,62 @@ package com.wangsheng.sharecampus.activity;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.wangsheng.sharecampus.R;
-import com.wangsheng.sharecampus.activity.insertTask.CreateTaskActivity;
-import com.wangsheng.sharecampus.activity.myinfo.AboutMeActivity;
-import com.wangsheng.sharecampus.dialog.login.LoginDialog;
+import com.wangsheng.sharecampus.dialog.LoginDialog;
 import com.wangsheng.sharecampus.dialog.PickSexDialog;
 import com.wangsheng.sharecampus.fragment.BigshotMainFragment;
-import com.wangsheng.sharecampus.fragment.task.TaskMainFragment;
+import com.wangsheng.sharecampus.fragment.TaskMainFragment;
 import com.wangsheng.sharecampus.util.SharedUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     public static DrawerLayout drawer;
-    @BindView(R.id.bottom_nav)
-    BottomNavigationView bottomNav;
     @BindView(R.id.nav_view)
     NavigationView navigationView;
+    @BindView(R.id.ll_b1)
+    LinearLayout llb1;
+    @BindView(R.id.b1_image)
+    ImageView b1image;
+    @BindView(R.id.b1_text)
+    TextView b1text;
+    @BindView(R.id.ll_b2)
+    LinearLayout llb2;
+    @BindView(R.id.b2_image)
+    ImageView b2image;
+    @BindView(R.id.ll_b3)
+    LinearLayout llb3;
+    @BindView(R.id.b3_image)
+    ImageView b3image;
+    @BindView(R.id.b3_text)
+    TextView b3text;
 
     Fragment bigshot;
     Fragment task;
-    public static LinearLayout islogin,notlogin;
+    private LinearLayout islogin,notlogin;
+    private TextView user_name,user_introduce;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,8 +93,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         addFragment(R.id.content_layout, bigshot);
         addFragment(R.id.content_layout, task);
 
-        hideFragment(task);
-
         int[][] states = new int[][]{
                 new int[]{-android.R.attr.state_checked},
                 new int[]{android.R.attr.state_checked}
@@ -88,28 +102,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getResources().getColor(R.color.blue_light)
         };
         ColorStateList csl = new ColorStateList(states, colors);
-        bottomNav.setItemTextColor(csl);
-        bottomNav.setItemIconTintList(csl);
-        bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.task:
-                        hideFragment(task);
-                        showFragment(bigshot);
-                        break;
-                    case R.id.message:
-                        hideFragment(bigshot);
-                        showFragment(task);
-                        break;
-                    case R.id.add_task:
-                        Intent intent = new Intent(MainActivity.this,CreateTaskActivity.class);
-                        startActivity(intent);
-                }
-                return true;
-            }
-        });
-
 
         View header = navigationView.getHeaderView(0);
         CircleImageView ivUserIconNav = (CircleImageView) header.findViewById(R.id.civ_user_icon);
@@ -122,6 +114,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
         islogin = (LinearLayout)header.findViewById(R.id.drawer_islogin);
         notlogin = (LinearLayout)header.findViewById(R.id.drawer_notlogin);
+        user_name = (TextView)header.findViewById(R.id.user_name);
+        user_introduce = (TextView)header.findViewById(R.id.user_introduce);
         CircleImageView login = (CircleImageView) header.findViewById(R.id.drawer_login);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,9 +125,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
         refreshLogin();
+        changePage(1);
     }
     public void refreshLogin(){
         if(SharedUtil.getParam("islogin","").toString().equals("1")){
+            user_name.setText(SharedUtil.getParam("usernickName","暂无昵称").toString());
+            user_introduce.setText(SharedUtil.getParam("userIntroduce","暂无介绍").toString());
             islogin.setVisibility(View.VISIBLE);
             notlogin.setVisibility(View.GONE);
         }else {
@@ -219,5 +216,49 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         return false;
+    }
+    public void changePage(int pageNum){
+        switch (pageNum){
+            case 1:
+                showFragment(bigshot);
+                hideFragment(task);
+                b1image.setImageDrawable(tintDrawable(R.drawable.bottom_item_bigshot,R.color.blue_light));
+                b1text.setTextColor(getResources().getColor(R.color.blue_light));
+                b3image.setImageDrawable(tintDrawable(R.drawable.bottom_item_task,R.color.white));
+                b3text.setTextColor(getResources().getColor(R.color.white));
+                break;
+            case 2:
+                Intent intent = new Intent(MainActivity.this,CreateTaskActivity.class);
+                startActivity(intent);
+                break;
+            case 3:
+                showFragment(task);
+                hideFragment(bigshot);
+                b1image.setImageDrawable(tintDrawable(R.drawable.bottom_item_bigshot,R.color.white));
+                b1text.setTextColor(getResources().getColor(R.color.white));
+                b3image.setImageDrawable(tintDrawable(R.drawable.bottom_item_task,R.color.blue_light));
+                b3text.setTextColor(getResources().getColor(R.color.blue_light));
+                break;
+        }
+    }
+    public static Drawable tintDrawable(int image, int color) {
+        Drawable drawable = getMainActivity().getResources().getDrawable(image).mutate();
+        drawable = DrawableCompat.wrap(drawable);
+        DrawableCompat.setTint(drawable, getMainActivity().getResources().getColor(color));
+        return drawable;
+    }
+    @OnClick({R.id.ll_b1,R.id.ll_b2,R.id.ll_b3})
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.ll_b1:
+                changePage(1);
+                break;
+            case R.id.ll_b2:
+                changePage(2);
+                break;
+            case R.id.ll_b3:
+                changePage(3);
+                break;
+        }
     }
 }

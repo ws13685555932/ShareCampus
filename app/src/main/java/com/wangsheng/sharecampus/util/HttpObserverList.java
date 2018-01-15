@@ -30,10 +30,10 @@ public abstract class HttpObserverList<T> implements Observer<ResponseInfoList<T
 
     @Override
     public void onNext(ResponseInfoList<T> responseInfoList) {
-        if(responseInfoList.getStatusCode().equals("200")||responseInfoList.getStatusCode().equals("201")){
-            onSuccess(responseInfoList.getDataList());
+        if(responseInfoList.getTotal()>0){
+            onSuccess(responseInfoList.getDataList(),responseInfoList.getPageNo());
         }else{
-            onFailed(responseInfoList.getMessage());
+            onFailed("无更多记录");
         }
     }
 
@@ -55,7 +55,7 @@ public abstract class HttpObserverList<T> implements Observer<ResponseInfoList<T
 
     }
 
-    public abstract void onSuccess(T t);
+    public abstract void onSuccess(T t,int pageNo);
     public abstract void onFailed(String message);
 
 }
