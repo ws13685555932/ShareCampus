@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.0"
+    buildToolsVersion '26.0.2'
     aaptOptions {
         cruncherEnabled = false
         useNewCruncher = false
@@ -26,6 +26,10 @@ android {
 repositories {
     flatDir {
         dirs 'lib' //就是你放aar的目录地址
+    }
+    maven {
+        url 'https://maven.google.com/'
+        name 'Google'
     }
 }
 
